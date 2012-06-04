@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="charset=UTF-8" />
+        <!--<link rel="stylesheet" href="" type="text/css" media="screen" />-->
+
+        <title>{{page_title}}</title>
+    <body>
+        {% if page_title %}
+        <h1>{{page_title}}</h1>
+        {% endif %}
+            
+        <div>
+        {% block design %}<p>Placeholder text. Lorem Ipsum etc.</p>{% endblock design %}
+        </div>
+        {% block javascript %}
+        {% comment %}Lägg din Javascriptkod här.{% endcomment %}
+        {% endblock javascript %}
+    </body>
+</html>
+
