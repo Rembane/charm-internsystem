@@ -28,3 +28,9 @@ pip-log.txt
 
 # VIM
 *.sw[op]
+
+# Database files
+dev.db
+
+# Migration files
+*migration*
