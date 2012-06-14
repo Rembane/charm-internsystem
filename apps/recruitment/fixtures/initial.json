@@ -1,0 +1,380 @@
+[
+    {
+        "fields": {
+            "code": "sv-SE", 
+            "name": "Swedish"
+        }, 
+        "model": "recruitment.language", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "code": "en", 
+            "name": "English"
+        }, 
+        "model": "recruitment.language", 
+        "pk": 2
+    }, 
+
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "title": "Computer engineering"
+        }, 
+        "model": "recruitment.studyarea", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 1, 
+            "title": "Datateknik"
+        }, 
+        "model": "recruitment.studyarea", 
+        "pk": 2
+    }, 
+
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "name": "A Motorcycle"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "name": "B Car"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "name": "BE Car with trailer"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "name": "C Truck"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "name": "CE Truck with trailer"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "name": "D Bus"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "language": 2, 
+            "main": null, 
+            "name": "DE Bus with trailer"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 1, 
+            "name": "A Motorcykel"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 2, 
+            "name": "B Bil"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 4, 
+            "name": "C Lastbil"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 5, 
+            "name": "CE Lastbil med sl\u00e4p"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 3, 
+            "name": "BE Bil med tungt sl\u00e4p"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 6, 
+            "name": "D Buss"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "language": 1, 
+            "main": 7, 
+            "name": "DE Buss med sl\u00e4p"
+        }, 
+        "model": "recruitment.driverlicense", 
+        "pk": 14
+    }, 
+
+    {
+        "fields": {"main": null, "name": "A2", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 1
+    }, 
+
+    {
+        "fields": {"main": 1, "name": "A2", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 2
+    }, 
+
+    {
+        "fields": {"main": null, "name": "A3", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 3
+    }, 
+
+    {
+        "fields": {"main": 3, "name": "A3", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 4
+    }, 
+
+    {
+        "fields": {"main": null, "name": "A4", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 5
+    }, 
+
+    {
+        "fields": {"main": 5, "name": "A4", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 6
+    }, 
+
+    {
+        "fields": {"main": null, "name": "B1", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 7
+    }, 
+
+    {
+        "fields": {"main": 7, "name": "B1", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 8
+    }, 
+
+    {
+        "fields": {"main": null, "name": "B2", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 9
+    }, 
+
+    {
+        "fields": {"main": 9, "name": "B2", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 10
+    }, 
+
+    {
+        "fields": {"main": null, "name": "B3", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 11
+    }, 
+
+    {
+        "fields": {"main": 11, "name": "B3", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 12
+    }, 
+
+    {
+        "fields": {"main": null, "name": "B6", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 13
+    }, 
+
+    {
+        "fields": {"main": 13, "name": "B6", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 14
+    }, 
+
+    {
+        "fields": {"main": null, "name": "C1", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 15
+    }, 
+
+    {
+        "fields": {"main": 15, "name": "C1", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 16
+    }, 
+
+    {
+        "fields": {"main": null, "name": "C2", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 17
+    }, 
+
+    {
+        "fields": {"main": 17, "name": "C2", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 18
+    }, 
+
+    {
+        "fields": {"main": null, "name": "C5", "language": 2},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 19
+    }, 
+
+    {
+        "fields": {"main": 19, "name": "C5", "language": 1},
+        "model": "recruitment.forkliftlicense", 
+        "pk": 20
+    }, 
+
+    {
+        "fields": {"main": null, "name": "XXS", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 1
+    }, 
+
+    {
+        "fields": {"main": 1, "name": "XXS", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 2
+    }, 
+
+    {
+        "fields": {"main": null, "name": "XS", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 3
+    }, 
+
+    {
+        "fields": {"main": 3, "name": "XS", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 4
+    }, 
+
+    {
+        "fields": {"main": null, "name": "S", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 5
+    }, 
+
+    {
+        "fields": {"main": 5, "name": "S", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 6
+    }, 
+
+    {
+        "fields": {"main": null, "name": "M", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 7
+    }, 
+
+    {
+        "fields": {"main": 7, "name": "M", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 8
+    }, 
+
+    {
+        "fields": {"main": null, "name": "L", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 9
+    }, 
+
+    {
+        "fields": {"main": 9, "name": "L", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 10
+    }, 
+
+    {
+        "fields": {"main": null, "name": "XL", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 11
+    }, 
+
+    {
+        "fields": {"main": 11, "name": "XL", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 12
+    }, 
+
+    {
+        "fields": {"main": null, "name": "XXL", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 13
+    }, 
+
+    {
+        "fields": {"main": 13, "name": "XXL", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 14
+    }, 
+
+    {
+        "fields": {"main": null, "name": "XXXL", "language": 2},
+        "model": "recruitment.shirtsize", 
+        "pk": 15
+    }, 
+
+    {
+        "fields": {"main": 15, "name": "XXXL", "language": 1},
+        "model": "recruitment.shirtsize", 
+        "pk": 16
+    }
+]
