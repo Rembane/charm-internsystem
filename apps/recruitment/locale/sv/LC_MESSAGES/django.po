@@ -1,0 +1,157 @@
+# Charm Internal System Translation File
+# Copyright (C) 2012
+# This file is distributed under the same license as the charm-internsystem package.
+# Andreas Ekeroot, andeke@gmail.com, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-17 21:19+0200\n"
+"PO-Revision-Date: 2012-06-17 21:20+0100\n"
+"Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#: forms.py:12
+msgid "Username"
+msgstr "Användarnamn"
+
+#: forms.py:12
+msgid "Please enter your prefered username."
+msgstr "Ange det användarnamn du föredrar"
+
+#: models.py:8
+msgid "Language code"
+msgstr "Språkkod"
+
+#: models.py:9
+msgid "Language name"
+msgstr "Språknamn"
+
+#: models.py:12
+msgid "language"
+msgstr "Språk"
+
+#: models.py:13
+msgid "languages"
+msgstr "Språk"
+
+#: models.py:19
+msgid "Area of study"
+msgstr "Studieområde"
+
+#: models.py:21
+#: models.py:33
+#: models.py:45
+#: models.py:57
+msgid "Pointing to the main language."
+msgstr "Pekar på huvudspråket"
+
+#: models.py:24
+#: models.py:74
+msgid "area of study"
+msgstr "Studieområde"
+
+#: models.py:25
+msgid "areas of study"
+msgstr "Studieområden"
+
+#: models.py:31
+#: models.py:43
+#: models.py:55
+msgid "Name"
+msgstr "Namn"
+
+#: models.py:36
+msgid "driver license"
+msgstr "Körkort"
+
+#: models.py:37
+msgid "driver licenses"
+msgstr "Körkort"
+
+#: models.py:48
+msgid "forklift license"
+msgstr "Truckkort"
+
+#: models.py:49
+msgid "forklift licenses"
+msgstr "Truckkort"
+
+#: models.py:60
+msgid "shirt size"
+msgstr "Tröjstorlek"
+
+#: models.py:61
+msgid "shirt sizes"
+msgstr "Tröjstorlekar"
+
+#: models.py:68
+msgid "First name"
+msgstr "Förnamn"
+
+#: models.py:69
+msgid "Last name"
+msgstr "Efternamn"
+
+#: models.py:70
+msgid "Social security number"
+msgstr "Personnummer"
+
+#: models.py:70
+msgid "Enter your social security number, using ten or twelve digits."
+msgstr "Ange ditt personnummer, använd tio eller tolv siffror."
+
+#: models.py:71
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#: models.py:72
+msgid "E-mail"
+msgstr "E-postadress"
+
+#: models.py:75
+msgid "Starting year"
+msgstr "Inskrivningsår"
+
+#: models.py:77
+msgid "<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job\">Safety first!</a>"
+msgstr "<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job\">Säkerheten först!</a>"
+
+#: models.py:78
+msgid "Allergies and food preferences"
+msgstr "Allergier och matpreferenser"
+
+#: models.py:83
+msgid "Created"
+msgstr "Skapad"
+
+#: models.py:86
+msgid "person"
+msgstr "Person"
+
+#: models.py:87
+msgid "people"
+msgstr "Personer"
+
+#: views.py:31
+msgid "Register!"
+msgstr "Registrera dig!"
+
+#: views.py:31
+msgid "Register me!"
+msgstr "Registrera mig!"
+
+#: views.py:34
+msgid "Confirmation!"
+msgstr "Bekräftelse!"
+
+#: templates/recruitment/confirmation.html:4
+msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."
+msgstr "Tack för att du registrerade dig. Du kommer att få ett e-mail inom 24 timmar med mer information."
+

@@ -6,6 +6,15 @@
 
         <title>{{page_title}}</title>
     <body>
+        <div id="language_box">
+            <ul>
+            {% for code, language in LANGUAGES %}
+            <li><a href="{% url set_language code %}">{{language}}</a>
+            {% endfor %}
+            </ul>
+            <p>Current language: {{LANGUAGE_CODE}}</p>
+        </diV>
+
         {% if page_title %}
         <h1>{{page_title}}</h1>
         {% endif %}

@@ -2,11 +2,18 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.utils.translation import ugettext as _
+from django.utils.translation import get_language, ugettext as _
 from recruitment.forms import PersonForm, UserForm
+from recruitment.models import DriverLicense, ForkLiftLicense, Language, ShirtSize, StudyArea
+import operator
 
 def register(request):
     pform = PersonForm(request.POST or None, prefix='pf')
+
+    # Pick only the alternatives with the right language
+    for (field, model) in (('study_area', StudyArea), ('driver_license', DriverLicense), ('forklift_license', ForkLiftLicense), ('shirt_size', ShirtSize)):
+       pform.fields[field].queryset = model.objects.filter(language__code__icontains=get_language())
+
     uform = UserForm(request.POST or None, prefix='uf')
     if request.method == 'POST':
         if all([f.is_valid() for f in (pform, uform)]):
@@ -26,3 +33,11 @@ def register(request):
 def confirmation(request):
     return render(request, 'recruitment/confirmation.html', { 'page_title' : _(u'Confirmation!'), })
     
+def set_language(request, code):
+    u"""Set the language session variable to code."""
+    try:
+        request.session['django_language'] = code
+    except Language.DoesNotExist:
+        pass
+   
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])

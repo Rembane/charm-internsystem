@@ -9,4 +9,4 @@ class PersonForm(forms.ModelForm):
         exclude = ('user')
 
 class UserForm(forms.Form):
-    username = forms.CharField(label=_(u'Username'), help_text=ugettext_lazy(u'Please type in the username you wish to login with.'))
+    username = forms.CharField(label=ugettext_lazy(u'Username'), help_text=ugettext_lazy(u'Please enter your prefered username.'))
