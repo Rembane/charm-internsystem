@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% trans "First name" %}: {{person.fname}}
+{% trans "Last name" %}: {{person.lname}}
+{% trans "Social security number" %}: {{person.ssn}}
+{% trans "Phone number" %}: {{person.phone}}
+{% trans "E-mail" %}: {{person.email}}
+{% trans "Area of study" %}: {{person.study_area}}
+{% trans "Starting year" %}: {{person.starting_year}}
+{% trans "driver license" %}: {{person.driver_license.all|join:", "}}
+{% trans "forklift license" %}: {{person.forklift_license.all|join:", "}}
+{% trans "Allergies and food preferences" %}: {% if person.allergies %}{{person.allergies}}{% else %}{% trans "None" %}{% endif %}
+{% trans "shirt size" %}: {{person.shirt_size}}
+
+{% trans "Username" %}: {{person.user.username}}
+{% trans "Password" %}: {{password}}
+
+
+
+{% trans "Regards CHARM" %}
+

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-17 21:19+0200\n"
-"PO-Revision-Date: 2012-06-17 21:20+0100\n"
+"POT-Creation-Date: 2012-06-17 22:50+0200\n"
+"PO-Revision-Date: 2012-06-17 22:50+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,6 +18,8 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 
 #: forms.py:12
+#: templates/recruitment/confirmation.html:57
+#: templates/recruitment/register_confirmation_mail.txt:15
 msgid "Username"
 msgstr "Användarnamn"
 
@@ -42,6 +44,8 @@ msgid "languages"
 msgstr "Språk"
 
 #: models.py:19
+#: templates/recruitment/confirmation.html:28
+#: templates/recruitment/register_confirmation_mail.txt:8
 msgid "Area of study"
 msgstr "Studieområde"
 
@@ -68,6 +72,9 @@ msgid "Name"
 msgstr "Namn"
 
 #: models.py:36
+#: models.py:76
+#: templates/recruitment/confirmation.html:36
+#: templates/recruitment/register_confirmation_mail.txt:10
 msgid "driver license"
 msgstr "Körkort"
 
@@ -76,6 +83,9 @@ msgid "driver licenses"
 msgstr "Körkort"
 
 #: models.py:48
+#: models.py:77
+#: templates/recruitment/confirmation.html:40
+#: templates/recruitment/register_confirmation_mail.txt:11
 msgid "forklift license"
 msgstr "Truckkort"
 
@@ -84,6 +94,9 @@ msgid "forklift licenses"
 msgstr "Truckkort"
 
 #: models.py:60
+#: models.py:79
+#: templates/recruitment/confirmation.html:48
+#: templates/recruitment/register_confirmation_mail.txt:13
 msgid "shirt size"
 msgstr "Tröjstorlek"
 
@@ -92,14 +105,20 @@ msgid "shirt sizes"
 msgstr "Tröjstorlekar"
 
 #: models.py:68
+#: templates/recruitment/confirmation.html:8
+#: templates/recruitment/register_confirmation_mail.txt:3
 msgid "First name"
 msgstr "Förnamn"
 
 #: models.py:69
+#: templates/recruitment/confirmation.html:12
+#: templates/recruitment/register_confirmation_mail.txt:4
 msgid "Last name"
 msgstr "Efternamn"
 
 #: models.py:70
+#: templates/recruitment/confirmation.html:16
+#: templates/recruitment/register_confirmation_mail.txt:5
 msgid "Social security number"
 msgstr "Personnummer"
 
@@ -108,14 +127,20 @@ msgid "Enter your social security number, using ten or twelve digits."
 msgstr "Ange ditt personnummer, använd tio eller tolv siffror."
 
 #: models.py:71
+#: templates/recruitment/confirmation.html:20
+#: templates/recruitment/register_confirmation_mail.txt:6
 msgid "Phone number"
 msgstr "Telefonnummer"
 
 #: models.py:72
+#: templates/recruitment/confirmation.html:24
+#: templates/recruitment/register_confirmation_mail.txt:7
 msgid "E-mail"
 msgstr "E-postadress"
 
 #: models.py:75
+#: templates/recruitment/confirmation.html:32
+#: templates/recruitment/register_confirmation_mail.txt:9
 msgid "Starting year"
 msgstr "Inskrivningsår"
 
@@ -124,6 +149,8 @@ msgid "<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_
 msgstr "<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job\">Säkerheten först!</a>"
 
 #: models.py:78
+#: templates/recruitment/confirmation.html:44
+#: templates/recruitment/register_confirmation_mail.txt:12
 msgid "Allergies and food preferences"
 msgstr "Allergier och matpreferenser"
 
@@ -139,19 +166,41 @@ msgstr "Person"
 msgid "people"
 msgstr "Personer"
 
-#: views.py:31
+#: views.py:40
+msgid "[CHARM] Thank you for registering!"
+msgstr "[CHARM] Tack för din anmälan!"
+
+#: views.py:48
 msgid "Register!"
 msgstr "Registrera dig!"
 
-#: views.py:31
+#: views.py:48
 msgid "Register me!"
 msgstr "Registrera mig!"
 
-#: views.py:34
+#: views.py:53
 msgid "Confirmation!"
 msgstr "Bekräftelse!"
 
 #: templates/recruitment/confirmation.html:4
 msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."
 msgstr "Tack för att du registrerade dig. Du kommer att få ett e-mail inom 24 timmar med mer information."
+
+#: templates/recruitment/confirmation.html:45
+#: templates/recruitment/register_confirmation_mail.txt:12
+msgid "None"
+msgstr "Inga"
+
+#: templates/recruitment/confirmation.html:61
+#: templates/recruitment/register_confirmation_mail.txt:16
+msgid "Password"
+msgstr "Lösenord"
+
+#: templates/recruitment/confirmation.html:62
+msgid "Is sent to your mail."
+msgstr "Skickas till din mail."
+
+#: templates/recruitment/register_confirmation_mail.txt:20
+msgid "Regards CHARM"
+msgstr "Med vänliga hälsningar CHARM"
 

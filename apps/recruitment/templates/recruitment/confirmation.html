@@ -2,5 +2,67 @@
 {% load i18n %}
 {% block design %}
 <p>{% trans "Thank you for registering. You will receive an e-mail within 24 hours with more information." %}</p>
+
+<table>
+    <tr>
+        <th>{% trans "First name" %}</th>
+        <td>{{person.fname}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Last name" %}</th>
+        <td>{{person.lname}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Social security number" %}</th>
+        <td>{{person.ssn}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Phone number" %}</th>
+        <td>{{person.phone}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "E-mail" %}</th>
+        <td>{{person.email}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Area of study" %}</th>
+        <td>{{person.study_area}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Starting year" %}</th>
+        <td>{{person.starting_year}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "driver license" %}</th>
+        <td>{{person.driver_license.all|join:", "}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "forklift license" %}</th>
+        <td>{{person.forklift_license.all|join:", "}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Allergies and food preferences" %}</th>
+        <td>{% if person.allergies %}{{person.allergies|linebreaks}}{% else %}{% trans "None" %}{% endif %}</td>
+    </tr>
+    <tr>
+        <th>{% trans "shirt size" %}</th>
+        <td>{{person.shirt_size}}</td>
+    </tr>
+
+    <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+
+    <tr>
+        <th>{% trans "Username" %}</th>
+        <td>{{person.user.username}}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Password" %}</th>
+        <td>{% trans "Is sent to your mail." %}</td>
+    </tr>
+</table>
+
+
 {% endblock design %}
 

@@ -67,15 +67,15 @@ class Person(models.Model):
     u"""Contains information about a person."""
     fname = models.CharField(ugettext_lazy(u'First name'), max_length=50)
     lname = models.CharField(ugettext_lazy(u'Last name'), max_length=50)
-    ssn = models.CharField(ugettext_lazy(u'Social security number'), help_text=ugettext_lazy(u'Enter your social security number, using ten or twelve digits.'), max_length=50)
+    ssn = models.CharField(ugettext_lazy(u'Social security number'), help_text=ugettext_lazy(u'Enter your social security number, using ten or twelve digits.'), max_length=50) # TODO: Add validation!
     phone = models.CharField(ugettext_lazy(u'Phone number'), max_length=15) # Phone numbers are max 15 digits long.
     email = models.EmailField(ugettext_lazy(u'E-mail'), max_length=50)
 
     study_area = models.ForeignKey(StudyArea, verbose_name=ugettext_lazy(u'area of study')) # , verbose_name=ugettext_lazy(), verbose_name_plural=ugettext_lazy()
     starting_year = models.IntegerField(ugettext_lazy(u'Starting year'))
-    driver_license = models.ManyToManyField(DriverLicense, verbose_name=ugettext_lazy(u'driver license')) 
-    forklift_license = models.ManyToManyField(ForkLiftLicense, verbose_name=ugettext_lazy(u'forklift license'), help_text=ugettext_lazy(u'<a href="http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job">Safety first!</a>')) 
-    allergies = models.TextField(ugettext_lazy(u'Allergies and food preferences'))
+    driver_license = models.ManyToManyField(DriverLicense, verbose_name=ugettext_lazy(u'driver license'), null=True, blank=True) 
+    forklift_license = models.ManyToManyField(ForkLiftLicense, verbose_name=ugettext_lazy(u'forklift license'), help_text=ugettext_lazy(u'<a href="http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job">Safety first!</a>'), null=True, blank=True) 
+    allergies = models.TextField(ugettext_lazy(u'Allergies and food preferences'), blank=True)
     shirt_size = models.ForeignKey(ShirtSize, verbose_name=ugettext_lazy(u'shirt size'))
 
     user = models.ForeignKey(User, blank=True, null=True)
