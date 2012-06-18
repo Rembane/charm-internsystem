@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,14 +7,27 @@
 
         <title>{{page_title}}</title>
     <body>
-        <div id="language_box">
+        <div id="menu">
+            <div id="language_box">
+                <h2>Languages</h2>
+                <ul>
+                {% for code, language in LANGUAGES %}
+                <li><a href="{% url set_language code %}">{{language}}</a>
+                {% endfor %}
+                </ul>
+                <p>Current language: {{LANGUAGE_CODE}}</p>
+            </div>
+            <h2>Menu</h2>
             <ul>
-            {% for code, language in LANGUAGES %}
-            <li><a href="{% url set_language code %}">{{language}}</a>
-            {% endfor %}
+                {% if user.is_authenticated %}
+                <li>{% trans "Logged in as:" %} {{user}}</li>
+                <li><a href="{% url logout %}">{% trans "Log out" %}</a></li>
+                {% else %}
+                <li><a href="{% url register %}">{% trans "Register" %}</a></li>
+                <li><a href="{% url login %}">{% trans "Login" %}</a></li>
+                {% endif %}
             </ul>
-            <p>Current language: {{LANGUAGE_CODE}}</p>
-        </diV>
+        </div>
 
         {% if page_title %}
         <h1>{{page_title}}</h1>

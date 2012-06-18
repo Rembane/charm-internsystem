@@ -163,3 +163,5 @@ LANGUAGES = (
     ('sv', ugettext('Swedish')),
 )
 
+LOGIN_URL='/login'
+LOGIN_REDIRECT_URL='/recruitment/mypage/'

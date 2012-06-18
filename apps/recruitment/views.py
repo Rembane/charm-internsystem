@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
@@ -51,6 +52,10 @@ def confirmation(request):
     # TODO: This doesn't feel secure enough. Maybe login is better? Or remove the session variable ASAP?
     person = Person.objects.get(pk=request.session['pid'])
     return render(request, 'recruitment/confirmation.html', { 'page_title' : _(u'Confirmation!'), 'person' : person })
+
+@login_required
+def mypage(request):
+    return render(request, 'recruitment/mypage.html', {'page_title' : _(u'My page')})
     
 def set_language(request, code):
     u"""Set the language session variable to code."""

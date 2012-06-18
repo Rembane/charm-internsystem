@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-17 22:50+0200\n"
-"PO-Revision-Date: 2012-06-17 22:50+0100\n"
+"POT-Creation-Date: 2012-06-18 21:47+0200\n"
+"PO-Revision-Date: 2012-06-18 21:49+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -166,21 +166,25 @@ msgstr "Person"
 msgid "people"
 msgstr "Personer"
 
-#: views.py:40
+#: views.py:41
 msgid "[CHARM] Thank you for registering!"
 msgstr "[CHARM] Tack för din anmälan!"
 
-#: views.py:48
+#: views.py:49
 msgid "Register!"
 msgstr "Registrera dig!"
 
-#: views.py:48
+#: views.py:49
 msgid "Register me!"
 msgstr "Registrera mig!"
 
-#: views.py:53
+#: views.py:54
 msgid "Confirmation!"
 msgstr "Bekräftelse!"
+
+#: views.py:58
+msgid "My page"
+msgstr "Min sida"
 
 #: templates/recruitment/confirmation.html:4
 msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."

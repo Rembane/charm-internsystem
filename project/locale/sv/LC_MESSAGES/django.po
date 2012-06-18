@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-18 21:49+0200\n"
+"PO-Revision-Date: 2012-06-18 21:54+0100\n"
+"Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Poedit-Language: Swedish\n"
+
+#: settings.py:162
+msgid "English"
+msgstr "Engelska"
+
+#: settings.py:163
+msgid "Swedish"
+msgstr "Svenska"
+
+#: templates/base.html:23
+msgid "Logged in as:"
+msgstr "Inloggad som:"
+
+#: templates/base.html:24
+msgid "Log out"
+msgstr "Logga ut"
+
+#: templates/base.html:26
+msgid "Register"
+msgstr "Registrera dig"
+
+#: templates/base.html:27
+#: templates/auth/login.html:23
+msgid "Login"
+msgstr "Logga in"
+
+#: templates/auth/login.html:7
+msgid "Your username and password didn't match. Please try again."
+msgstr "Ditt användarnamn och lösenord matchar inte. Var vänlig försök igen."
+
+#: templates/auth/logout.html:5
+msgid "You're now logged out. Thank you for visiting and please come again!"
+msgstr "Du är nu utloggad. Tack för ditt besök och välkommen åter!"
+
