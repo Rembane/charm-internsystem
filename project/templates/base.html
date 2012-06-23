@@ -20,7 +20,7 @@
             <h2>Menu</h2>
             <ul>
                 {% if user.is_authenticated %}
-                <li>{% trans "Logged in as:" %} {{user}}</li>
+                <li>{% trans "Logged in as:" %} <a href="{% url mypage %}">{{user}}</a></li>
                 <li><a href="{% url logout %}">{% trans "Log out" %}</a></li>
                 {% else %}
                 <li><a href="{% url register %}">{% trans "Register" %}</a></li>

@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.core.urlresolvers import reverse_lazy
 
 from django.contrib import admin
 admin.autodiscover()
@@ -17,5 +18,6 @@ urlpatterns = patterns('',
     # Django Auth
     url(r'^login/$',  'django.contrib.auth.views.login',  {'template_name': 'auth/login.html'},  name='login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'auth/logout.html'}, name='logout'),
+    url(r'^password_change/$', 'django.contrib.auth.views.password_change', {'template_name': 'auth/password_change_form.html', 'post_change_redirect' : reverse_lazy('mypage')}, name='password_change'),
 
 )

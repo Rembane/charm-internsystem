@@ -25,6 +25,7 @@ def register(request):
 
             password = User.objects.make_random_password(length=15)
             user = User.objects.create_user(uform.cleaned_data['username'], person.email, password)
+            user.email = person.email
             user.save()
 
             person.user = user
@@ -55,7 +56,31 @@ def confirmation(request):
 
 @login_required
 def mypage(request):
-    return render(request, 'recruitment/mypage.html', {'page_title' : _(u'My page')})
+    return render(request, 'recruitment/mypage.html', {'page_title' : _(u'My page'), 'person' : Person.objects.get(user=request.user)})
+
+@login_required
+def edit_my_profile(request):
+    u"""Edit the profile + the username of the user."""
+
+    person = Person.objects.get(user=request.user)
+    pform = PersonForm(request.POST or None, instance=person, prefix='pf')
+
+    # Pick only the alternatives with the right language
+    for (field, model) in (('study_area', StudyArea), ('driver_license', DriverLicense), ('forklift_license', ForkLiftLicense), ('shirt_size', ShirtSize)):
+       pform.fields[field].queryset = model.objects.filter(language__code__icontains=get_language())
+
+    uform = UserForm(request.POST or None, instance=request.user, prefix='uf')
+    if request.method == 'POST':
+        if all([f.is_valid() for f in (pform, uform)]):
+            personf = pform.save()
+
+            request.user.username = uform.cleaned_data['username']
+            request.user.email = personf.email
+            request.user.save()
+
+            return HttpResponseRedirect(reverse('mypage'))
+
+    return render(request, 'recruitment/register.html', { 'page_title' : _(u'Edit my profile'), 'button_text' : _(u'Save!'), 'forms' : (pform, uform) })
     
 def set_language(request, code):
     u"""Set the language session variable to code."""
@@ -65,3 +90,4 @@ def set_language(request, code):
         pass
    
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
