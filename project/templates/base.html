@@ -9,7 +9,7 @@
     <body>
         <div id="menu">
             <div id="language_box">
-                <h2>Languages</h2>
+                <h2>{% trans "Languages" %}</h2>
                 <ul>
                 {% for code, language in LANGUAGES %}
                 <li><a href="{% url set_language code %}">{{language}}</a>
@@ -17,7 +17,7 @@
                 </ul>
                 <p>Current language: {{LANGUAGE_CODE}}</p>
             </div>
-            <h2>Menu</h2>
+            <h2>{% trans "Menu" %}</h2>
             <ul>
                 {% if user.is_authenticated %}
                 <li>{% trans "Logged in as:" %} <a href="{% url mypage %}">{{user}}</a></li>

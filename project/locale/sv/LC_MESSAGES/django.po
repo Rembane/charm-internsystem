@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-23 15:23+0200\n"
-"PO-Revision-Date: 2012-06-23 15:24+0100\n"
+"POT-Creation-Date: 2012-06-23 15:59+0200\n"
+"PO-Revision-Date: 2012-06-23 15:59+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -26,6 +26,14 @@ msgstr "Engelska"
 msgid "Swedish"
 msgstr "Svenska"
 
+#: templates/base.html:12
+msgid "Languages"
+msgstr "Språk"
+
+#: templates/base.html:20
+msgid "Menu"
+msgstr "Meny"
+
 #: templates/base.html:23
 msgid "Logged in as:"
 msgstr "Inloggad som:"
@@ -38,8 +46,7 @@ msgstr "Logga ut"
 msgid "Register"
 msgstr "Registrera dig"
 
-#: templates/base.html:27
-#: templates/auth/login.html:23
+#: templates/base.html:27 templates/auth/login.html:23
 msgid "Login"
 msgstr "Logga in"
 
@@ -54,4 +61,3 @@ msgstr "Du är nu utloggad. Tack för ditt besök och välkommen åter!"
 #: templates/auth/password_change_form.html:11
 msgid "Change password!"
 msgstr "Ändra lösenord!"
-

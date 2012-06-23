@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-23 15:24+0200\n"
-"PO-Revision-Date: 2012-06-23 15:26+0100\n"
+"POT-Creation-Date: 2012-06-23 15:59+0200\n"
+"PO-Revision-Date: 2012-06-23 15:59+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Swedish\n"
+
+#: forms.py:16
+msgid "Social security number must have a length of 10 or 12 digits."
+msgstr "Ditt personnumer måste vara 12 eller 12 siffror långt."
 
 #: models.py:8
 msgid "Language code"
@@ -33,22 +37,17 @@ msgstr "Språk"
 msgid "languages"
 msgstr "Språk"
 
-#: models.py:19
-#: templates/recruitment/confirmation.html:28
+#: models.py:19 templates/recruitment/confirmation.html:28
 #: templates/recruitment/mypage.html:33
 #: templates/recruitment/register_confirmation_mail.txt:8
 msgid "Area of study"
 msgstr "Studieområde"
 
-#: models.py:21
-#: models.py:33
-#: models.py:45
-#: models.py:57
+#: models.py:21 models.py:33 models.py:45 models.py:57
 msgid "Pointing to the main language."
 msgstr "Pekar på huvudspråket"
 
-#: models.py:24
-#: models.py:74
+#: models.py:24 models.py:74
 msgid "area of study"
 msgstr "Studieområde"
 
@@ -56,15 +55,11 @@ msgstr "Studieområde"
 msgid "areas of study"
 msgstr "Studieområden"
 
-#: models.py:31
-#: models.py:43
-#: models.py:55
+#: models.py:31 models.py:43 models.py:55
 msgid "Name"
 msgstr "Namn"
 
-#: models.py:36
-#: models.py:76
-#: templates/recruitment/confirmation.html:36
+#: models.py:36 models.py:76 templates/recruitment/confirmation.html:36
 #: templates/recruitment/mypage.html:41
 #: templates/recruitment/register_confirmation_mail.txt:10
 msgid "driver license"
@@ -74,9 +69,7 @@ msgstr "Körkort"
 msgid "driver licenses"
 msgstr "Körkort"
 
-#: models.py:48
-#: models.py:77
-#: templates/recruitment/confirmation.html:40
+#: models.py:48 models.py:77 templates/recruitment/confirmation.html:40
 #: templates/recruitment/mypage.html:45
 #: templates/recruitment/register_confirmation_mail.txt:11
 msgid "forklift license"
@@ -86,9 +79,7 @@ msgstr "Truckkort"
 msgid "forklift licenses"
 msgstr "Truckkort"
 
-#: models.py:60
-#: models.py:79
-#: templates/recruitment/confirmation.html:48
+#: models.py:60 models.py:79 templates/recruitment/confirmation.html:48
 #: templates/recruitment/mypage.html:53
 #: templates/recruitment/register_confirmation_mail.txt:13
 msgid "shirt size"
@@ -98,22 +89,19 @@ msgstr "Tröjstorlek"
 msgid "shirt sizes"
 msgstr "Tröjstorlekar"
 
-#: models.py:68
-#: templates/recruitment/confirmation.html:8
+#: models.py:68 templates/recruitment/confirmation.html:8
 #: templates/recruitment/mypage.html:13
 #: templates/recruitment/register_confirmation_mail.txt:3
 msgid "First name"
 msgstr "Förnamn"
 
-#: models.py:69
-#: templates/recruitment/confirmation.html:12
+#: models.py:69 templates/recruitment/confirmation.html:12
 #: templates/recruitment/mypage.html:17
 #: templates/recruitment/register_confirmation_mail.txt:4
 msgid "Last name"
 msgstr "Efternamn"
 
-#: models.py:70
-#: templates/recruitment/confirmation.html:16
+#: models.py:70 templates/recruitment/confirmation.html:16
 #: templates/recruitment/mypage.html:21
 #: templates/recruitment/register_confirmation_mail.txt:5
 msgid "Social security number"
@@ -123,33 +111,33 @@ msgstr "Personnummer"
 msgid "Enter your social security number, using ten or twelve digits."
 msgstr "Ange ditt personnummer, använd tio eller tolv siffror."
 
-#: models.py:71
-#: templates/recruitment/confirmation.html:20
+#: models.py:71 templates/recruitment/confirmation.html:20
 #: templates/recruitment/mypage.html:25
 #: templates/recruitment/register_confirmation_mail.txt:6
 msgid "Phone number"
 msgstr "Telefonnummer"
 
-#: models.py:72
-#: templates/recruitment/confirmation.html:24
+#: models.py:72 templates/recruitment/confirmation.html:24
 #: templates/recruitment/mypage.html:29
 #: templates/recruitment/register_confirmation_mail.txt:7
 msgid "E-mail"
 msgstr "E-postadress"
 
-#: models.py:75
-#: templates/recruitment/confirmation.html:32
+#: models.py:75 templates/recruitment/confirmation.html:32
 #: templates/recruitment/mypage.html:37
 #: templates/recruitment/register_confirmation_mail.txt:9
 msgid "Starting year"
 msgstr "Inskrivningsår"
 
 #: models.py:77
-msgid "<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job\">Safety first!</a>"
-msgstr "<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job\">Säkerheten först!</a>"
+msgid ""
+"<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-"
+"_The_First_Day_on_the_Job\">Safety first!</a>"
+msgstr ""
+"<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-"
+"_The_First_Day_on_the_Job\">Säkerheten först!</a>"
 
-#: models.py:78
-#: templates/recruitment/confirmation.html:44
+#: models.py:78 templates/recruitment/confirmation.html:44
 #: templates/recruitment/mypage.html:49
 #: templates/recruitment/register_confirmation_mail.txt:12
 msgid "Allergies and food preferences"
@@ -187,8 +175,7 @@ msgstr "Bekräftelse!"
 msgid "My page"
 msgstr "Min sida"
 
-#: views.py:83
-#: templates/recruitment/mypage.html:6
+#: views.py:83 templates/recruitment/mypage.html:6
 msgid "Edit my profile"
 msgstr "Ändra min profil"
 
@@ -197,8 +184,12 @@ msgid "Save!"
 msgstr "Spara!"
 
 #: templates/recruitment/confirmation.html:4
-msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."
-msgstr "Tack för att du registrerade dig. Du kommer att få ett e-mail inom 24 timmar med mer information."
+msgid ""
+"Thank you for registering. You will receive an e-mail within 24 hours with "
+"more information."
+msgstr ""
+"Tack för att du registrerade dig. Du kommer att få ett e-mail inom 24 timmar "
+"med mer information."
 
 #: templates/recruitment/confirmation.html:45
 #: templates/recruitment/mypage.html:50
@@ -222,8 +213,7 @@ msgstr "Lösenord"
 msgid "Is sent to your mail."
 msgstr "Skickas till din mail."
 
-#: templates/recruitment/mypage.html:7
-#: templates/recruitment/mypage.html:67
+#: templates/recruitment/mypage.html:7 templates/recruitment/mypage.html:67
 msgid "Change password"
 msgstr "Ändra lösenord"
 
