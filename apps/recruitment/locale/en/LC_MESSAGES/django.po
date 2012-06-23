@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-18 21:47+0200\n"
-"PO-Revision-Date: 2012-06-18 21:48+0100\n"
+"POT-Creation-Date: 2012-06-23 15:24+0200\n"
+"PO-Revision-Date: 2012-06-23 15:25+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -16,16 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: English\n"
-
-#: forms.py:12
-#: templates/recruitment/confirmation.html:57
-#: templates/recruitment/register_confirmation_mail.txt:15
-msgid "Username"
-msgstr "Username"
-
-#: forms.py:12
-msgid "Please enter your prefered username."
-msgstr "Please enter your prefered username."
 
 #: models.py:8
 msgid "Language code"
@@ -45,6 +35,7 @@ msgstr "languages"
 
 #: models.py:19
 #: templates/recruitment/confirmation.html:28
+#: templates/recruitment/mypage.html:33
 #: templates/recruitment/register_confirmation_mail.txt:8
 msgid "Area of study"
 msgstr "Area of study"
@@ -74,6 +65,7 @@ msgstr "Name"
 #: models.py:36
 #: models.py:76
 #: templates/recruitment/confirmation.html:36
+#: templates/recruitment/mypage.html:41
 #: templates/recruitment/register_confirmation_mail.txt:10
 msgid "driver license"
 msgstr "driver license"
@@ -85,6 +77,7 @@ msgstr "driver licenses"
 #: models.py:48
 #: models.py:77
 #: templates/recruitment/confirmation.html:40
+#: templates/recruitment/mypage.html:45
 #: templates/recruitment/register_confirmation_mail.txt:11
 msgid "forklift license"
 msgstr "forklift license"
@@ -96,6 +89,7 @@ msgstr "forklift licenses"
 #: models.py:60
 #: models.py:79
 #: templates/recruitment/confirmation.html:48
+#: templates/recruitment/mypage.html:53
 #: templates/recruitment/register_confirmation_mail.txt:13
 msgid "shirt size"
 msgstr "shirt size"
@@ -106,18 +100,21 @@ msgstr "shirt sizes"
 
 #: models.py:68
 #: templates/recruitment/confirmation.html:8
+#: templates/recruitment/mypage.html:13
 #: templates/recruitment/register_confirmation_mail.txt:3
 msgid "First name"
 msgstr "First name"
 
 #: models.py:69
 #: templates/recruitment/confirmation.html:12
+#: templates/recruitment/mypage.html:17
 #: templates/recruitment/register_confirmation_mail.txt:4
 msgid "Last name"
 msgstr "Last name"
 
 #: models.py:70
 #: templates/recruitment/confirmation.html:16
+#: templates/recruitment/mypage.html:21
 #: templates/recruitment/register_confirmation_mail.txt:5
 msgid "Social security number"
 msgstr "Social security number"
@@ -128,18 +125,21 @@ msgstr "Enter your social security number, using ten or twelve digits."
 
 #: models.py:71
 #: templates/recruitment/confirmation.html:20
+#: templates/recruitment/mypage.html:25
 #: templates/recruitment/register_confirmation_mail.txt:6
 msgid "Phone number"
 msgstr "Phone number"
 
 #: models.py:72
 #: templates/recruitment/confirmation.html:24
+#: templates/recruitment/mypage.html:29
 #: templates/recruitment/register_confirmation_mail.txt:7
 msgid "E-mail"
 msgstr "E-mail"
 
 #: models.py:75
 #: templates/recruitment/confirmation.html:32
+#: templates/recruitment/mypage.html:37
 #: templates/recruitment/register_confirmation_mail.txt:9
 msgid "Starting year"
 msgstr "Starting year"
@@ -150,6 +150,7 @@ msgstr "<a href=\"http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First
 
 #: models.py:78
 #: templates/recruitment/confirmation.html:44
+#: templates/recruitment/mypage.html:49
 #: templates/recruitment/register_confirmation_mail.txt:12
 msgid "Allergies and food preferences"
 msgstr "Allergies and food preferences"
@@ -166,36 +167,53 @@ msgstr "person"
 msgid "people"
 msgstr "people"
 
-#: views.py:41
+#: views.py:42
 msgid "[CHARM] Thank you for registering!"
 msgstr "[CHARM] Thank you for registering!"
 
-#: views.py:49
+#: views.py:50
 msgid "Register!"
 msgstr "Register!"
 
-#: views.py:49
+#: views.py:50
 msgid "Register me!"
 msgstr "Register me!"
 
-#: views.py:54
+#: views.py:55
 msgid "Confirmation!"
 msgstr "Confirmation!"
 
-#: views.py:58
+#: views.py:59
 msgid "My page"
 msgstr "My page"
+
+#: views.py:83
+#: templates/recruitment/mypage.html:6
+msgid "Edit my profile"
+msgstr "Edit my profile"
+
+#: views.py:83
+msgid "Save!"
+msgstr "Save!"
 
 #: templates/recruitment/confirmation.html:4
 msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."
 msgstr "Thank you for registering. You will receive an e-mail within 24 hours with more information."
 
 #: templates/recruitment/confirmation.html:45
+#: templates/recruitment/mypage.html:50
 #: templates/recruitment/register_confirmation_mail.txt:12
 msgid "None"
 msgstr "None"
 
+#: templates/recruitment/confirmation.html:57
+#: templates/recruitment/mypage.html:62
+#: templates/recruitment/register_confirmation_mail.txt:15
+msgid "Username"
+msgstr "Username"
+
 #: templates/recruitment/confirmation.html:61
+#: templates/recruitment/mypage.html:66
 #: templates/recruitment/register_confirmation_mail.txt:16
 msgid "Password"
 msgstr "Password"
@@ -204,7 +222,18 @@ msgstr "Password"
 msgid "Is sent to your mail."
 msgstr "Is sent to your mail."
 
+#: templates/recruitment/mypage.html:7
+#: templates/recruitment/mypage.html:67
+msgid "Change password"
+msgstr "Change password"
+
+#: templates/recruitment/mypage.html:10
+msgid "My profile"
+msgstr "My profile"
+
 #: templates/recruitment/register_confirmation_mail.txt:20
 msgid "Regards CHARM"
 msgstr "Regards CHARM"
 
+#~ msgid "Please enter your prefered username."
+#~ msgstr "Please enter your prefered username."
