@@ -1,4 +1,6 @@
-from django.contrib.auth.decorators import login_required
+# -*- coding: utf-8 -*-
+
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
@@ -6,7 +8,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext, loader
-from django.utils.translation import get_language, ugettext as _
+from django.utils.translation import ugettext as _
 from recruitment.forms import PersonForm, UserForm
 from recruitment.models import DriverLicense, ForkLiftLicense, Language, Person, ShirtSize, StudyArea
 import operator
@@ -14,9 +16,10 @@ import operator
 def register(request):
     pform = PersonForm(request.POST or None, prefix='pf')
 
-    # Pick only the alternatives with the right language
-    for (field, model) in (('study_area', StudyArea), ('driver_license', DriverLicense), ('forklift_license', ForkLiftLicense), ('shirt_size', ShirtSize)):
-       pform.fields[field].queryset = model.objects.filter(language__code__icontains=get_language())
+    # Remove the stupid help text.
+    stupid_help_text = _(u'Hold down "Control", or "Command" on a Mac, to select more than one.')
+    for field in ('driver_license', 'forklift_license'):
+        pform.fields[field].help_text = pform.fields[field].help_text.replace(stupid_help_text, '').strip()
 
     uform = UserForm(request.POST or None, prefix='uf')
     if request.method == 'POST':
@@ -63,13 +66,8 @@ def edit_my_profile(request):
     u"""Edit the profile + the username of the user."""
 
     person = Person.objects.get(user=request.user)
-    pform = PersonForm(request.POST or None, instance=person, prefix='pf')
-
-    # Pick only the alternatives with the right language
-    for (field, model) in (('study_area', StudyArea), ('driver_license', DriverLicense), ('forklift_license', ForkLiftLicense), ('shirt_size', ShirtSize)):
-       pform.fields[field].queryset = model.objects.filter(language__code__icontains=get_language())
-
-    uform = UserForm(request.POST or None, instance=request.user, prefix='uf')
+    pform  = PersonForm(request.POST or None, instance=person, prefix='pf')
+    uform  = UserForm(request.POST or None, instance=request.user, prefix='uf')
     if request.method == 'POST':
         if all([f.is_valid() for f in (pform, uform)]):
             personf = pform.save()
@@ -81,6 +79,10 @@ def edit_my_profile(request):
             return HttpResponseRedirect(reverse('mypage'))
 
     return render(request, 'recruitment/register.html', { 'page_title' : _(u'Edit my profile'), 'button_text' : _(u'Save!'), 'forms' : (pform, uform) })
+
+@permission_required('can_administrate')
+def reception(request):
+    return render(request, 'recruitment/reception.html', { 'page_title' : _(u'Reception'), 'people' : Person.objects.all().select_related()})
     
 def set_language(request, code):
     u"""Set the language session variable to code."""

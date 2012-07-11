@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
+
+from django_fsm.db.fields import FSMField, transition
 from django.contrib.auth.models import User
 from django.db import models
-from django.utils.translation import ugettext as _
-from django.utils.translation import ugettext_lazy
+from django.db.models import Q
+from django.utils.translation import get_language, ugettext_lazy, ugettext as _
 
 class Language(models.Model):
     u"""http://www.i18nguy.com/unicode/language-identifiers.html"""
@@ -15,53 +18,60 @@ class Language(models.Model):
     def __unicode__(self):
         return u'%s %s' % (self.code, self.name)
 
-class StudyArea(models.Model):
-    title = models.CharField(ugettext_lazy(u'Area of study'), max_length=50) # TODO: Better name!
+class StringTranslation(models.Model):
+    u"""A translation for a string."""
+    string   = models.CharField(ugettext_lazy(u'String'), max_length=25)
     language = models.ForeignKey(Language)
-    main = models.ForeignKey('self', blank=True, null=True, help_text=ugettext_lazy(u'Pointing to the main language.'))
+    default  = models.BooleanField(ugettext_lazy(u'Default language'), default=False)
 
+    class Meta:
+        verbose_name = ugettext_lazy(u'string translation')
+        verbose_name_plural = ugettext_lazy(u'string translations')
+
+    def __unicode__(self):
+        return self.string
+
+class BaseInfo(models.Model):
+    translations = models.ManyToManyField(StringTranslation)
+
+    class Meta:
+        abstract = True
+        ordering = ('translations__string',)
+
+    def __unicode__(self):
+        u"""Either get the language we want, or get the default language. 
+        Will probably throw terrible exceptions if neither is found. 
+        That's a feature. The translations are regarded as broken if 
+        neither a translation nor a default exists."""
+        lang = get_language().lower()
+        ts   = self.translations.filter(Q(language__code__icontains=lang) | Q(default=True)).select_related(depth=2)
+        if len(ts) > 1:
+            for t in ts:
+                if lang in t.language.code.lower():
+                    return t.string
+        else:
+            if ts[0].default:
+                return ts[0].string
+
+class StudyArea(BaseInfo):
     class Meta:
         verbose_name = ugettext_lazy(u'area of study')
         verbose_name_plural = ugettext_lazy(u'areas of study')
 
-    def __unicode__(self):
-        return self.title
-
-class DriverLicense(models.Model):
-    name = models.CharField(ugettext_lazy(u'Name'), max_length=25)
-    language = models.ForeignKey(Language)
-    main = models.ForeignKey('self', blank=True, null=True, help_text=ugettext_lazy(u'Pointing to the main language.'))
-
+class DriverLicense(BaseInfo):
     class Meta:
         verbose_name = ugettext_lazy(u'driver license')
         verbose_name_plural = ugettext_lazy(u'driver licenses')
 
-    def __unicode__(self):
-        return self.name
-
-class ForkLiftLicense(models.Model):
-    name = models.CharField(ugettext_lazy(u'Name'), max_length=25)
-    language = models.ForeignKey(Language)
-    main = models.ForeignKey('self', blank=True, null=True, help_text=ugettext_lazy(u'Pointing to the main language.'))
-
+class ForkLiftLicense(BaseInfo):
     class Meta:
         verbose_name = ugettext_lazy(u'forklift license')
         verbose_name_plural = ugettext_lazy(u'forklift licenses')
 
-    def __unicode__(self):
-        return self.name
-
-class ShirtSize(models.Model):
-    name = models.CharField(ugettext_lazy(u'Name'), max_length=25)
-    language = models.ForeignKey(Language)
-    main = models.ForeignKey('self', blank=True, null=True, help_text=ugettext_lazy(u'Pointing to the main language.'))
-
+class ShirtSize(BaseInfo):
     class Meta:
         verbose_name = ugettext_lazy(u'shirt size')
         verbose_name_plural = ugettext_lazy(u'shirt sizes')
-
-    def __unicode__(self):
-        return self.name
 
 class Person(models.Model):
     u"""Contains information about a person."""
@@ -74,10 +84,11 @@ class Person(models.Model):
     study_area = models.ForeignKey(StudyArea, verbose_name=ugettext_lazy(u'area of study')) # , verbose_name=ugettext_lazy(), verbose_name_plural=ugettext_lazy()
     starting_year = models.IntegerField(ugettext_lazy(u'Starting year'))
     driver_license = models.ManyToManyField(DriverLicense, verbose_name=ugettext_lazy(u'driver license'), null=True, blank=True) 
-    forklift_license = models.ManyToManyField(ForkLiftLicense, verbose_name=ugettext_lazy(u'forklift license'), help_text=ugettext_lazy(u'<a href="http://en.wikipedia.org/wiki/Forklift_Driver_Klaus_-_The_First_Day_on_the_Job">Safety first!</a>'), null=True, blank=True) 
+    forklift_license = models.ManyToManyField(ForkLiftLicense, verbose_name=ugettext_lazy(u'forklift license'), help_text=ugettext_lazy(u'<a href="http://www.youtube.com/watch?v=9z77oztO6UQ">Safety first!</a>'), null=True, blank=True) 
     allergies = models.TextField(ugettext_lazy(u'Allergies and food preferences'), blank=True)
     shirt_size = models.ForeignKey(ShirtSize, verbose_name=ugettext_lazy(u'shirt size'))
 
+    # TODO: Gör om till OneToOneField
     user = models.ForeignKey(User, blank=True, null=True)
 
     created = models.DateTimeField(ugettext_lazy(u'Created'), auto_now_add=True) 
@@ -87,6 +98,37 @@ class Person(models.Model):
         verbose_name_plural = ugettext_lazy(u'people')
         ordering = ('fname', 'lname')
 
+        permissions = (
+                    (u'can_administrate', _(u'Can administrate')),
+                )
+
     def __unicode__(self):
         return u'%s %s' % (self.fname, self.lname)
     
+class Application(models.Model):
+    person = models.ForeignKey(Person)
+    state = FSMField(ugettext_lazy(u'State'), default=ugettext_lazy(u'applied'), protected=True)
+    
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = ugettext_lazy(u'application')
+        verbose_name_plural = ugettext_lazy(u'applications')
+
+    @transition(source=u'applied', target=u'approved', save=True)
+    def approve(self):
+        pass
+
+    @transition(source=u'applied', target=u'not_approved', save=True)
+    def not_approve(self):
+        pass
+
+    @transition(source=u'applied', target=u'reserve', save=True)
+    def put_in_reserve(self):
+        pass
+
+    @transition(source=u'*', target=u'dropped_out', save=True)
+    def drop_out(self):
+        pass
+

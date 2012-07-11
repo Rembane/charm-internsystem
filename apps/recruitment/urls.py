@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
@@ -5,6 +7,7 @@ urlpatterns = patterns('',
     url(r'^confirmation/$', 'recruitment.views.confirmation', name='confirmation'),
     url(r'^mypage/$', 'recruitment.views.mypage', name='mypage'),
     url(r'^edit_my_profile/$', 'recruitment.views.edit_my_profile', name='edit_my_profile'),
+    url(r'^reception/$', 'recruitment.views.reception', name='reception'),
 
     url(r'^set_language/(?P<code>[\w\-]+)$', 'recruitment.views.set_language', name='set_language')
 )

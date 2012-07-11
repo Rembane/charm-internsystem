@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
+
 from django import forms
 from django.contrib.auth.models import User
+from django.forms.widgets import CheckboxSelectMultiple 
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
 from recruitment.models import Person
@@ -9,6 +12,11 @@ class PersonForm(forms.ModelForm):
     class Meta:
         model = Person
         exclude = ('user')
+
+        widgets = {
+                'driver_license' : CheckboxSelectMultiple(),
+                'forklift_license' : CheckboxSelectMultiple()
+                }
 
     def clean_ssn(self):
         ssn = ''.join(d for d in self.cleaned_data['ssn'] if d in string.digits)
