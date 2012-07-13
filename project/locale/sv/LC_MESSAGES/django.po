@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-23 15:59+0200\n"
+"POT-Creation-Date: 2012-07-13 13:15+0200\n"
 "PO-Revision-Date: 2012-06-23 15:59+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Poedit-Language: Swedish\n"
 
-#: settings.py:162
+#: settings.py:163
 msgid "English"
 msgstr "Engelska"
 
-#: settings.py:163
+#: settings.py:164
 msgid "Swedish"
 msgstr "Svenska"
 
