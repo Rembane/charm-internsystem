@@ -5,9 +5,16 @@
 <ul>
     <li><a href="{% url edit_my_profile %}">{% trans "Edit my profile" %}</a></li>
     <li><a href="{% url password_change %}">{% trans "Change password" %}</a></li>
+    <li></li>
+    <li><a href="{% url apply_for_position %}">{% trans "Apply for position" %}</a></li>
 </ul>
 
 <h2>{% trans "My profile" %}</h2>
+
+{% if not person.email_confirmed %}
+<p>{% trans "Please confirm that your e-mail address is valid by clicking on the link in the confirmation mail." %}</p>
+{% endif %}
+
 <table>
     <tr>
         <th>{% trans "First name" %}</th>
@@ -68,6 +75,22 @@
     </tr>
 </table>
 
+<h2>{% trans "Applications" %}</h2>
+
+<a name="applications"></a>
+
+<table>
+    <tr>
+        <th>{% trans "Positions" %}</th>
+        <th>{% trans "State" %}</th>
+    </tr>
+{% for application in person.application_set.all %}
+    <tr>
+        <td>{{ application.preferred_position1 }}{% if application.preferred_position2 %}, {{ application.preferred_position2 }}{% endif %}{% if application.preferred_position3 %}, {{ application.preferred_position3 }}{% endif %}</td>
+        <td>{{ application.state }}</td>
+    </tr>
+{% endfor %}
+</table>
 
 {% endblock design %}
 

@@ -3,12 +3,10 @@
 <form method="post" action="">
     {% csrf_token %}
     <table>
-        {% for form in forms %}
         {{form}}
         <tr>
             <td colspan="2">&nbsp;</td>
         </tr>
-        {% endfor %}
         <tr>
             <th>&nbsp;</th>
             <td><input type="submit" value="{{button_text}}" id="submit_button"></td>

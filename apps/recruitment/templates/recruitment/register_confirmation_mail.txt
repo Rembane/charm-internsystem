@@ -15,6 +15,7 @@
 {% trans "Username" %}: {{person.user.username}}
 {% trans "Password" %}: {{password}}
 
+{% trans "Confirm your email address by clicking on this link:" %} http://{{domain}}{% url confirm_email_address person.pk email_hash %}
 
 
 {% trans "Regards CHARM" %}

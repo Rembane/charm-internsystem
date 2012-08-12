@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 13:15+0200\n"
-"PO-Revision-Date: 2012-07-13 13:15+0100\n"
+"POT-Creation-Date: 2012-08-12 18:20+0200\n"
+"PO-Revision-Date: 2012-08-12 18:23+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,245 +17,299 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Swedish\n"
 
-#: forms.py:24
+#: forms.py:28
 msgid "Social security number must have a length of 10 or 12 digits."
 msgstr "Ditt personnumer måste vara 10 eller 12 siffror långt."
 
-#: models.py:11
+#: models.py:12
 msgid "Language code"
 msgstr "Språkkod"
 
-#: models.py:12
+#: models.py:13
 msgid "Language name"
 msgstr "Språknamn"
 
-#: models.py:15
+#: models.py:16
 msgid "language"
 msgstr "Språk"
 
-#: models.py:16
+#: models.py:17
 msgid "languages"
 msgstr "Språk"
 
-#: models.py:23
+#: models.py:24
 msgid "String"
 msgstr "Sträng"
 
-#: models.py:25
-#, fuzzy
+#: models.py:26
+#: models.py:39
 msgid "Default language"
 msgstr "Språk"
 
-#: models.py:28
+#: models.py:29
 msgid "string translation"
 msgstr "översättningssträng"
 
-#: models.py:29
+#: models.py:30
 msgid "string translations"
 msgstr "översättningssträngar"
 
-#: models.py:58
-#: models.py:84
+#: models.py:37
+msgid "Text"
+msgstr "Text"
+
+#: models.py:42
+msgid "text translation"
+msgstr "översättningssträng"
+
+#: models.py:43
+msgid "text translations"
+msgstr "översättningssträngar"
+
+#: models.py:74
+#: models.py:100
 msgid "area of study"
 msgstr "Studieområde"
 
-#: models.py:59
+#: models.py:75
 msgid "areas of study"
 msgstr "Studieområden"
 
-#: models.py:63
-#: models.py:86
+#: models.py:79
+#: models.py:102
 #: templates/recruitment/confirmation.html:36
-#: templates/recruitment/mypage.html:41
+#: templates/recruitment/mypage.html:48
 #: templates/recruitment/register_confirmation_mail.txt:10
 msgid "driver license"
 msgstr "Körkort"
 
-#: models.py:64
+#: models.py:80
 msgid "driver licenses"
 msgstr "Körkort"
 
-#: models.py:68
-#: models.py:87
+#: models.py:84
+#: models.py:103
 #: templates/recruitment/confirmation.html:40
-#: templates/recruitment/mypage.html:45
+#: templates/recruitment/mypage.html:52
 #: templates/recruitment/register_confirmation_mail.txt:11
 msgid "forklift license"
 msgstr "Truckkort"
 
-#: models.py:69
+#: models.py:85
 msgid "forklift licenses"
 msgstr "Truckkort"
 
-#: models.py:73
 #: models.py:89
+#: models.py:105
 #: templates/recruitment/confirmation.html:48
-#: templates/recruitment/mypage.html:53
+#: templates/recruitment/mypage.html:60
 #: templates/recruitment/register_confirmation_mail.txt:13
 msgid "shirt size"
 msgstr "Tröjstorlek"
 
-#: models.py:74
+#: models.py:90
 msgid "shirt sizes"
 msgstr "Tröjstorlekar"
 
-#: models.py:78
+#: models.py:94
 #: templates/recruitment/confirmation.html:8
-#: templates/recruitment/mypage.html:13
+#: templates/recruitment/mypage.html:20
 #: templates/recruitment/register_confirmation_mail.txt:3
 msgid "First name"
 msgstr "Förnamn"
 
-#: models.py:79
+#: models.py:95
 #: templates/recruitment/confirmation.html:12
-#: templates/recruitment/mypage.html:17
+#: templates/recruitment/mypage.html:24
 #: templates/recruitment/register_confirmation_mail.txt:4
 msgid "Last name"
 msgstr "Efternamn"
 
-#: models.py:80
+#: models.py:96
 #: templates/recruitment/confirmation.html:16
-#: templates/recruitment/mypage.html:21
+#: templates/recruitment/mypage.html:28
 #: templates/recruitment/register_confirmation_mail.txt:5
 msgid "Social security number"
 msgstr "Personnummer"
 
-#: models.py:80
+#: models.py:96
 msgid "Enter your social security number, using ten or twelve digits."
 msgstr "Ange ditt personnummer, använd tio eller tolv siffror."
 
-#: models.py:81
+#: models.py:97
 #: templates/recruitment/confirmation.html:20
-#: templates/recruitment/mypage.html:25
-#: templates/recruitment/reception.html:9
+#: templates/recruitment/list_applications.html:9
+#: templates/recruitment/mypage.html:32
 #: templates/recruitment/register_confirmation_mail.txt:6
 msgid "Phone number"
 msgstr "Telefonnummer"
 
-#: models.py:82
+#: models.py:98
 #: templates/recruitment/confirmation.html:24
-#: templates/recruitment/mypage.html:29
-#: templates/recruitment/reception.html:10
+#: templates/recruitment/mypage.html:36
 #: templates/recruitment/register_confirmation_mail.txt:7
 msgid "E-mail"
 msgstr "E-postadress"
 
-#: models.py:85
+#: models.py:101
 #: templates/recruitment/confirmation.html:32
-#: templates/recruitment/mypage.html:37
-#: templates/recruitment/reception.html:12
+#: templates/recruitment/mypage.html:44
 #: templates/recruitment/register_confirmation_mail.txt:9
 msgid "Starting year"
 msgstr "Inskrivningsår"
 
-#: models.py:87
+#: models.py:103
 msgid "<a href=\"http://www.youtube.com/watch?v=9z77oztO6UQ\">Safety first!</a>"
 msgstr "<a href=\"http://www.youtube.com/watch?v=9z77oztO6UQ\">Säkerheten först!</a>"
 
-#: models.py:88
+#: models.py:104
 #: templates/recruitment/confirmation.html:44
-#: templates/recruitment/mypage.html:49
-#: templates/recruitment/reception.html:15
+#: templates/recruitment/mypage.html:56
 #: templates/recruitment/register_confirmation_mail.txt:12
 msgid "Allergies and food preferences"
 msgstr "Allergier och matpreferenser"
 
-#: models.py:94
+#: models.py:110
 msgid "Created"
 msgstr "Skapad"
 
-#: models.py:97
+#: models.py:111
+msgid "E-mail address confirmed"
+msgstr "E-postadress bekräftad"
+
+#: models.py:114
 msgid "person"
 msgstr "Person"
 
-#: models.py:98
+#: models.py:115
 msgid "people"
 msgstr "Personer"
 
-#: models.py:102
+#: models.py:119
 msgid "Can administrate"
 msgstr "Får administrera"
 
-#: models.py:110
-#: templates/recruitment/reception.html:7
+#: models.py:180
+#: templates/recruitment/list_applications.html:7
+#: templates/recruitment/mypage.html:85
 msgid "State"
-msgstr "Tillstånd"
+msgstr "Status"
 
-#: models.py:110
+#: models.py:180
+#: models.py:197
+#: models.py:201
+#: models.py:205
 msgid "applied"
 msgstr "ansökt"
 
-#: models.py:116
+#: models.py:182
+msgid "Are you suitable?"
+msgstr "Är du lämplig?"
+
+#: models.py:182
+msgid "Motivate why you would do a good job at this post."
+msgstr "Motivera varför du skulle göra ett bra jobb på posten du söker."
+
+#: models.py:183
+msgid "Your first preferred position"
+msgstr "Förstahandsval"
+
+#: models.py:184
+msgid "Your second preferred position"
+msgstr "Andrahansval"
+
+#: models.py:185
+msgid "Your third preferred position"
+msgstr "Tredjehandsval"
+
+#: models.py:191
 msgid "application"
 msgstr "ansökan"
 
-#: models.py:117
+#: models.py:192
 msgid "applications"
 msgstr "ansökningar"
 
-#: views.py:20
-#, fuzzy
+#: models.py:197
+msgid "approved"
+msgstr "antagen"
+
+#: models.py:201
+msgid "not_approved"
+msgstr "ej antagen"
+
+#: models.py:205
+msgid "reserve"
+msgstr "reserv"
+
+#: models.py:209
+msgid "dropped_out"
+msgstr "hoppat av"
+
+#: views.py:21
 msgid "Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
 msgstr ""
 
-#: views.py:45
+#: views.py:44
 msgid "[CHARM] Thank you for registering!"
 msgstr "[CHARM] Tack för din anmälan!"
 
-#: views.py:53
+#: views.py:52
 msgid "Register!"
 msgstr "Registrera dig!"
 
-#: views.py:53
-msgid "Register me!"
-msgstr "Registrera mig!"
-
-#: views.py:58
-msgid "Confirmation!"
-msgstr "Bekräftelse!"
-
-#: views.py:62
+#: views.py:56
 msgid "My page"
 msgstr "Min sida"
 
-#: views.py:81
+#: views.py:84
 #: templates/recruitment/mypage.html:6
 msgid "Edit my profile"
 msgstr "Ändra min profil"
 
-#: views.py:81
+#: views.py:84
+#: views.py:98
 msgid "Save!"
 msgstr "Spara!"
 
-#: views.py:85
-msgid "Reception"
-msgstr "Reception"
+#: views.py:98
+#: templates/recruitment/mypage.html:9
+msgid "Apply for position"
+msgstr "Ansök om befattning"
+
+#: views.py:103
+#: templates/recruitment/backoffice.html:7
+msgid "List applications"
+msgstr "Lista ansökningar"
+
+#: templates/recruitment/backoffice.html:5
+msgid "Backoffice functionality"
+msgstr "Backofficefunktionalitet"
 
 #: templates/recruitment/confirmation.html:4
 msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."
 msgstr "Tack för att du registrerade dig. Du kommer att få ett e-mail inom 24 timmar med mer information."
 
 #: templates/recruitment/confirmation.html:28
-#: templates/recruitment/mypage.html:33
-#: templates/recruitment/reception.html:11
+#: templates/recruitment/mypage.html:40
 #: templates/recruitment/register_confirmation_mail.txt:8
 msgid "Area of study"
 msgstr "Studieområde"
 
 #: templates/recruitment/confirmation.html:45
-#: templates/recruitment/mypage.html:50
+#: templates/recruitment/mypage.html:57
 #: templates/recruitment/register_confirmation_mail.txt:12
 msgid "None"
 msgstr "Inga"
 
 #: templates/recruitment/confirmation.html:57
-#: templates/recruitment/mypage.html:62
+#: templates/recruitment/mypage.html:69
 #: templates/recruitment/register_confirmation_mail.txt:15
 msgid "Username"
 msgstr "Användarnamn"
 
 #: templates/recruitment/confirmation.html:61
-#: templates/recruitment/mypage.html:66
+#: templates/recruitment/mypage.html:73
 #: templates/recruitment/register_confirmation_mail.txt:16
 msgid "Password"
 msgstr "Lösenord"
@@ -264,41 +318,62 @@ msgstr "Lösenord"
 msgid "Is sent to your mail."
 msgstr "Skickas till din mail."
 
-#: templates/recruitment/mypage.html:7
-#: templates/recruitment/mypage.html:67
-msgid "Change password"
-msgstr "Ändra lösenord"
-
-#: templates/recruitment/mypage.html:10
-msgid "My profile"
-msgstr "Min profil"
-
-#: templates/recruitment/reception.html:8
+#: templates/recruitment/list_applications.html:8
 msgid "Name"
 msgstr "Namn"
 
-#: templates/recruitment/reception.html:13
-#, fuzzy
-msgid "Driver license"
-msgstr "Körkort"
+#: templates/recruitment/mypage.html:7
+#: templates/recruitment/mypage.html:74
+msgid "Change password"
+msgstr "Ändra lösenord"
 
-#: templates/recruitment/reception.html:14
-#, fuzzy
-msgid "Forklift license"
-msgstr "Truckkort"
+#: templates/recruitment/mypage.html:12
+msgid "My profile"
+msgstr "Min profil"
 
-#: templates/recruitment/reception.html:16
-#, fuzzy
-msgid "Shirt size"
-msgstr "Tröjstorlek"
+#: templates/recruitment/mypage.html:15
+msgid "Please confirm that your e-mail address is valid by clicking on the link in the confirmation mail."
+msgstr "Bekräfta att din e-postadress fungerar genom att klicka på länken i bekräftelsemailet!"
 
-#: templates/recruitment/reception.html:28
-msgid "Yes"
-msgstr "Ja"
+#: templates/recruitment/mypage.html:78
+msgid "Applications"
+msgstr "Ansökningar"
 
-#: templates/recruitment/register_confirmation_mail.txt:20
+#: templates/recruitment/mypage.html:84
+msgid "Positions"
+msgstr "Befattningar"
+
+#: templates/recruitment/register_confirmation_mail.txt:18
+msgid "Confirm your email address by clicking on this link:"
+msgstr "Bekräfta din e-postadress genom att klicka på länken:"
+
+#: templates/recruitment/register_confirmation_mail.txt:21
 msgid "Regards CHARM"
 msgstr "Med vänliga hälsningar CHARM"
+
+#~ msgid "Register me and apply for the posts!"
+#~ msgstr "Registrera mig och sök posten!"
+
+#~ msgid "Confirmation!"
+#~ msgstr "Bekräftelse!"
+
+#~ msgid "Register me!"
+#~ msgstr "Registrera mig!"
+
+#~ msgid "Reception"
+#~ msgstr "Reception"
+
+#~ msgid "Driver license"
+#~ msgstr "Körkort"
+
+#~ msgid "Forklift license"
+#~ msgstr "Truckkort"
+
+#~ msgid "Shirt size"
+#~ msgstr "Tröjstorlek"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
 
 #~ msgid "Pointing to the main language."
 #~ msgstr "Pekar på huvudspråket"

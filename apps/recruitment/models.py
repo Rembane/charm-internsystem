@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Q
 from django.utils.translation import get_language, ugettext_lazy, ugettext as _
+import hashlib
 
 class Language(models.Model):
     u"""http://www.i18nguy.com/unicode/language-identifiers.html"""
@@ -31,6 +32,19 @@ class StringTranslation(models.Model):
     def __unicode__(self):
         return self.string
 
+class TextTranslation(models.Model):
+    u"""A translation for a text."""
+    text     = models.TextField(ugettext_lazy(u'Text'))
+    language = models.ForeignKey(Language)
+    default  = models.BooleanField(ugettext_lazy(u'Default language'), default=False)
+
+    class Meta:
+        verbose_name = ugettext_lazy(u'text translation')
+        verbose_name_plural = ugettext_lazy(u'text translations')
+
+    def __unicode__(self):
+        return self.text
+
 class BaseInfo(models.Model):
     translations = models.ManyToManyField(StringTranslation)
 
@@ -52,6 +66,8 @@ class BaseInfo(models.Model):
         else:
             if ts[0].default:
                 return ts[0].string
+
+        assert False, u'Got neither a translation nor a default language for %s, id: %s' % (self, self.pk)
 
 class StudyArea(BaseInfo):
     class Meta:
@@ -92,6 +108,7 @@ class Person(models.Model):
     user = models.ForeignKey(User, blank=True, null=True)
 
     created = models.DateTimeField(ugettext_lazy(u'Created'), auto_now_add=True) 
+    email_confirmed = models.BooleanField(ugettext_lazy(u'E-mail address confirmed'), default=False)
 
     class Meta:
         verbose_name = ugettext_lazy(u'person')
@@ -104,10 +121,68 @@ class Person(models.Model):
 
     def __unicode__(self):
         return u'%s %s' % (self.fname, self.lname)
+
+    @property
+    def email_hash(self):
+        return hashlib.sha1(self.email).hexdigest()
+
+class Position(models.Model):
+    u"""A position within the CHARM organisation."""
+
+    name_translations = models.ManyToManyField(StringTranslation)
+    description_translations = models.ManyToManyField(TextTranslation)
+
+    @property
+    def name(self):
+        u"""Either get the language we want, or get the default language. 
+        Will probably throw terrible exceptions if neither is found. 
+        That's a feature. The translations are regarded as broken if 
+        neither a translation nor a default exists.
+        
+        This one breaks DRY, the original one is in BaseInfo."""
+        lang = get_language().lower()
+        ts   = self.name_translations.filter(Q(language__code__icontains=lang) | Q(default=True)).select_related(depth=2)
+        if len(ts) > 1:
+            for t in ts:
+                if lang in t.language.code.lower():
+                    return t.string
+        else:
+            if ts[0].default:
+                return ts[0].string
+
+        assert False, u'Got neither a translation nor a default language for %s, id: %s' % (self, self.pk)
+
+    @property
+    def description(self):
+        u"""Either get the language we want, or get the default language. 
+        Will probably throw terrible exceptions if neither is found. 
+        That's a feature. The translations are regarded as broken if 
+        neither a translation nor a default exists.
+        
+        This one breaks DRY, the original one is in BaseInfo."""
+        lang = get_language().lower()
+        ts   = self.description_translations.filter(Q(language__code__icontains=lang) | Q(default=True)).select_related(depth=2)
+        if len(ts) > 1:
+            for t in ts:
+                if lang in t.language.code.lower():
+                    return t.string
+        else:
+            if ts[0].default:
+                return ts[0].string
+
+        assert False, u'Got neither a translation nor a default language for %s, id: %s' % (self, self.pk)
+
+    def __unicode__(self):
+        return self.name
     
 class Application(models.Model):
     person = models.ForeignKey(Person)
-    state = FSMField(ugettext_lazy(u'State'), default=ugettext_lazy(u'applied'), protected=True)
+    state = FSMField(ugettext_lazy(u'State'), default=ugettext_lazy(u'applied'), protected=True, editable=False)
+
+    suitability_motivation = models.CharField(ugettext_lazy(u'Are you suitable?'), help_text=ugettext_lazy(u'Motivate why you would do a good job at this post.'), max_length=255)
+    preferred_position1 = models.ForeignKey(Position, verbose_name=ugettext_lazy(u'Your first preferred position'), related_name=u'application_set1')
+    preferred_position2 = models.ForeignKey(Position, verbose_name=ugettext_lazy(u'Your second preferred position'), related_name=u'application_set2', blank=True, null=True) 
+    preferred_position3 = models.ForeignKey(Position, verbose_name=ugettext_lazy(u'Your third preferred position'), related_name=u'application_set3', blank=True, null=True)
     
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -116,19 +191,22 @@ class Application(models.Model):
         verbose_name = ugettext_lazy(u'application')
         verbose_name_plural = ugettext_lazy(u'applications')
 
-    @transition(source=u'applied', target=u'approved', save=True)
+    def __unicode__(self):
+        return u'%s, %s' % (self.person, self.state)
+
+    @transition(source=ugettext_lazy(u'applied'), target=ugettext_lazy(u'approved'), save=True)
     def approve(self):
         pass
 
-    @transition(source=u'applied', target=u'not_approved', save=True)
+    @transition(source=ugettext_lazy(u'applied'), target=ugettext_lazy(u'not_approved'), save=True)
     def not_approve(self):
         pass
 
-    @transition(source=u'applied', target=u'reserve', save=True)
+    @transition(source=ugettext_lazy(u'applied'), target=ugettext_lazy(u'reserve'), save=True)
     def put_in_reserve(self):
         pass
 
-    @transition(source=u'*', target=u'dropped_out', save=True)
+    @transition(source=u'*', target=ugettext_lazy(u'dropped_out'), save=True)
     def drop_out(self):
         pass
 
