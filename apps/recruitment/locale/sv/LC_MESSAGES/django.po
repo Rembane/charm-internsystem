@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-12 18:20+0200\n"
-"PO-Revision-Date: 2012-08-12 18:23+0100\n"
+"POT-Creation-Date: 2012-08-13 11:20+0200\n"
+"PO-Revision-Date: 2012-08-13 11:23+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Swedish\n"
 
-#: forms.py:28
+#: forms.py:33
 msgid "Social security number must have a length of 10 or 12 digits."
 msgstr "Ditt personnumer måste vara 10 eller 12 siffror långt."
 
@@ -80,6 +80,7 @@ msgstr "Studieområden"
 #: templates/recruitment/confirmation.html:36
 #: templates/recruitment/mypage.html:48
 #: templates/recruitment/register_confirmation_mail.txt:10
+#: templates/recruitment/show_application.html:50
 msgid "driver license"
 msgstr "Körkort"
 
@@ -92,6 +93,7 @@ msgstr "Körkort"
 #: templates/recruitment/confirmation.html:40
 #: templates/recruitment/mypage.html:52
 #: templates/recruitment/register_confirmation_mail.txt:11
+#: templates/recruitment/show_application.html:54
 msgid "forklift license"
 msgstr "Truckkort"
 
@@ -104,6 +106,7 @@ msgstr "Truckkort"
 #: templates/recruitment/confirmation.html:48
 #: templates/recruitment/mypage.html:60
 #: templates/recruitment/register_confirmation_mail.txt:13
+#: templates/recruitment/show_application.html:62
 msgid "shirt size"
 msgstr "Tröjstorlek"
 
@@ -129,6 +132,7 @@ msgstr "Efternamn"
 #: templates/recruitment/confirmation.html:16
 #: templates/recruitment/mypage.html:28
 #: templates/recruitment/register_confirmation_mail.txt:5
+#: templates/recruitment/show_application.html:34
 msgid "Social security number"
 msgstr "Personnummer"
 
@@ -141,6 +145,7 @@ msgstr "Ange ditt personnummer, använd tio eller tolv siffror."
 #: templates/recruitment/list_applications.html:9
 #: templates/recruitment/mypage.html:32
 #: templates/recruitment/register_confirmation_mail.txt:6
+#: templates/recruitment/show_application.html:17
 msgid "Phone number"
 msgstr "Telefonnummer"
 
@@ -148,6 +153,7 @@ msgstr "Telefonnummer"
 #: templates/recruitment/confirmation.html:24
 #: templates/recruitment/mypage.html:36
 #: templates/recruitment/register_confirmation_mail.txt:7
+#: templates/recruitment/show_application.html:38
 msgid "E-mail"
 msgstr "E-postadress"
 
@@ -155,6 +161,7 @@ msgstr "E-postadress"
 #: templates/recruitment/confirmation.html:32
 #: templates/recruitment/mypage.html:44
 #: templates/recruitment/register_confirmation_mail.txt:9
+#: templates/recruitment/show_application.html:46
 msgid "Starting year"
 msgstr "Inskrivningsår"
 
@@ -166,6 +173,7 @@ msgstr "<a href=\"http://www.youtube.com/watch?v=9z77oztO6UQ\">Säkerheten förs
 #: templates/recruitment/confirmation.html:44
 #: templates/recruitment/mypage.html:56
 #: templates/recruitment/register_confirmation_mail.txt:12
+#: templates/recruitment/show_application.html:58
 msgid "Allergies and food preferences"
 msgstr "Allergier och matpreferenser"
 
@@ -192,6 +200,7 @@ msgstr "Får administrera"
 #: models.py:180
 #: templates/recruitment/list_applications.html:7
 #: templates/recruitment/mypage.html:85
+#: templates/recruitment/show_application.html:9
 msgid "State"
 msgstr "Status"
 
@@ -246,6 +255,26 @@ msgstr "reserv"
 msgid "dropped_out"
 msgstr "hoppat av"
 
+#: models.py:214
+msgid "Comment"
+msgstr "Kommentar"
+
+#: models.py:215
+msgid "Person"
+msgstr "Person"
+
+#: models.py:216
+msgid "Application"
+msgstr "Ansökan"
+
+#: models.py:220
+msgid "application comment"
+msgstr "ansökningskommentar"
+
+#: models.py:221
+msgid "application comments"
+msgstr "ansökningskommentarer"
+
 #: views.py:21
 msgid "Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
 msgstr ""
@@ -282,6 +311,14 @@ msgstr "Ansök om befattning"
 msgid "List applications"
 msgstr "Lista ansökningar"
 
+#: views.py:107
+msgid "Show application"
+msgstr "Visa ansökan"
+
+#: views.py:107
+msgid "Comment!"
+msgstr "Kommentera!"
+
 #: templates/recruitment/backoffice.html:5
 msgid "Backoffice functionality"
 msgstr "Backofficefunktionalitet"
@@ -293,12 +330,14 @@ msgstr "Tack för att du registrerade dig. Du kommer att få ett e-mail inom 24 
 #: templates/recruitment/confirmation.html:28
 #: templates/recruitment/mypage.html:40
 #: templates/recruitment/register_confirmation_mail.txt:8
+#: templates/recruitment/show_application.html:42
 msgid "Area of study"
 msgstr "Studieområde"
 
 #: templates/recruitment/confirmation.html:45
 #: templates/recruitment/mypage.html:57
 #: templates/recruitment/register_confirmation_mail.txt:12
+#: templates/recruitment/show_application.html:59
 msgid "None"
 msgstr "Inga"
 
@@ -319,6 +358,7 @@ msgid "Is sent to your mail."
 msgstr "Skickas till din mail."
 
 #: templates/recruitment/list_applications.html:8
+#: templates/recruitment/show_application.html:13
 msgid "Name"
 msgstr "Namn"
 
@@ -350,6 +390,22 @@ msgstr "Bekräfta din e-postadress genom att klicka på länken:"
 #: templates/recruitment/register_confirmation_mail.txt:21
 msgid "Regards CHARM"
 msgstr "Med vänliga hälsningar CHARM"
+
+#: templates/recruitment/show_application.html:5
+msgid "Back"
+msgstr "Tillbaka"
+
+#: templates/recruitment/show_application.html:21
+msgid "Preferred position 1"
+msgstr "Förstahandsval"
+
+#: templates/recruitment/show_application.html:25
+msgid "Preferred position 2"
+msgstr "Andrahandsval"
+
+#: templates/recruitment/show_application.html:29
+msgid "Preferred position 3"
+msgstr "Tredjehandsval"
 
 #~ msgid "Register me and apply for the posts!"
 #~ msgstr "Registrera mig och sök posten!"

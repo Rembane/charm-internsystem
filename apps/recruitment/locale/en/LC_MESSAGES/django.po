@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-12 18:20+0200\n"
-"PO-Revision-Date: 2012-08-12 18:24+0100\n"
+"POT-Creation-Date: 2012-08-13 11:20+0200\n"
+"PO-Revision-Date: 2012-08-13 11:23+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: English\n"
 
-#: forms.py:28
+#: forms.py:33
 msgid "Social security number must have a length of 10 or 12 digits."
 msgstr "Social security number must have a length of 10 or 12 digits."
 
@@ -80,6 +80,7 @@ msgstr "areas of study"
 #: templates/recruitment/confirmation.html:36
 #: templates/recruitment/mypage.html:48
 #: templates/recruitment/register_confirmation_mail.txt:10
+#: templates/recruitment/show_application.html:50
 msgid "driver license"
 msgstr "driver license"
 
@@ -92,6 +93,7 @@ msgstr "driver licenses"
 #: templates/recruitment/confirmation.html:40
 #: templates/recruitment/mypage.html:52
 #: templates/recruitment/register_confirmation_mail.txt:11
+#: templates/recruitment/show_application.html:54
 msgid "forklift license"
 msgstr "forklift license"
 
@@ -104,6 +106,7 @@ msgstr "forklift licenses"
 #: templates/recruitment/confirmation.html:48
 #: templates/recruitment/mypage.html:60
 #: templates/recruitment/register_confirmation_mail.txt:13
+#: templates/recruitment/show_application.html:62
 msgid "shirt size"
 msgstr "shirt size"
 
@@ -129,6 +132,7 @@ msgstr "Last name"
 #: templates/recruitment/confirmation.html:16
 #: templates/recruitment/mypage.html:28
 #: templates/recruitment/register_confirmation_mail.txt:5
+#: templates/recruitment/show_application.html:34
 msgid "Social security number"
 msgstr "Social security number"
 
@@ -141,6 +145,7 @@ msgstr "Enter your social security number, using ten or twelve digits."
 #: templates/recruitment/list_applications.html:9
 #: templates/recruitment/mypage.html:32
 #: templates/recruitment/register_confirmation_mail.txt:6
+#: templates/recruitment/show_application.html:17
 msgid "Phone number"
 msgstr "Phone number"
 
@@ -148,6 +153,7 @@ msgstr "Phone number"
 #: templates/recruitment/confirmation.html:24
 #: templates/recruitment/mypage.html:36
 #: templates/recruitment/register_confirmation_mail.txt:7
+#: templates/recruitment/show_application.html:38
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -155,6 +161,7 @@ msgstr "E-mail"
 #: templates/recruitment/confirmation.html:32
 #: templates/recruitment/mypage.html:44
 #: templates/recruitment/register_confirmation_mail.txt:9
+#: templates/recruitment/show_application.html:46
 msgid "Starting year"
 msgstr "Starting year"
 
@@ -166,6 +173,7 @@ msgstr "<a href=\"http://www.youtube.com/watch?v=9z77oztO6UQ\">Safety first!</a>
 #: templates/recruitment/confirmation.html:44
 #: templates/recruitment/mypage.html:56
 #: templates/recruitment/register_confirmation_mail.txt:12
+#: templates/recruitment/show_application.html:58
 msgid "Allergies and food preferences"
 msgstr "Allergies and food preferences"
 
@@ -192,6 +200,7 @@ msgstr "Can administrate"
 #: models.py:180
 #: templates/recruitment/list_applications.html:7
 #: templates/recruitment/mypage.html:85
+#: templates/recruitment/show_application.html:9
 msgid "State"
 msgstr "State"
 
@@ -246,6 +255,26 @@ msgstr "reserve"
 msgid "dropped_out"
 msgstr "dropped_out"
 
+#: models.py:214
+msgid "Comment"
+msgstr "Comment"
+
+#: models.py:215
+msgid "Person"
+msgstr "Person"
+
+#: models.py:216
+msgid "Application"
+msgstr "Application"
+
+#: models.py:220
+msgid "application comment"
+msgstr "application comment"
+
+#: models.py:221
+msgid "application comments"
+msgstr "application comments"
+
 #: views.py:21
 #, fuzzy
 msgid "Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
@@ -283,6 +312,14 @@ msgstr "Apply for position"
 msgid "List applications"
 msgstr "List applications"
 
+#: views.py:107
+msgid "Show application"
+msgstr "Show application"
+
+#: views.py:107
+msgid "Comment!"
+msgstr "Comment!"
+
 #: templates/recruitment/backoffice.html:5
 msgid "Backoffice functionality"
 msgstr "Backoffice functionality"
@@ -294,12 +331,14 @@ msgstr "Thank you for registering. You will receive an e-mail within 24 hours wi
 #: templates/recruitment/confirmation.html:28
 #: templates/recruitment/mypage.html:40
 #: templates/recruitment/register_confirmation_mail.txt:8
+#: templates/recruitment/show_application.html:42
 msgid "Area of study"
 msgstr "Area of study"
 
 #: templates/recruitment/confirmation.html:45
 #: templates/recruitment/mypage.html:57
 #: templates/recruitment/register_confirmation_mail.txt:12
+#: templates/recruitment/show_application.html:59
 msgid "None"
 msgstr "None"
 
@@ -320,6 +359,7 @@ msgid "Is sent to your mail."
 msgstr "Is sent to your mail."
 
 #: templates/recruitment/list_applications.html:8
+#: templates/recruitment/show_application.html:13
 msgid "Name"
 msgstr "Name"
 
@@ -351,6 +391,22 @@ msgstr "Confirm your email address by clicking on this link:"
 #: templates/recruitment/register_confirmation_mail.txt:21
 msgid "Regards CHARM"
 msgstr "Regards CHARM"
+
+#: templates/recruitment/show_application.html:5
+msgid "Back"
+msgstr "Back"
+
+#: templates/recruitment/show_application.html:21
+msgid "Preferred position 1"
+msgstr "Preferred position 1"
+
+#: templates/recruitment/show_application.html:25
+msgid "Preferred position 2"
+msgstr "Preferred position 2"
+
+#: templates/recruitment/show_application.html:29
+msgid "Preferred position 3"
+msgstr "Preferred position 3"
 
 #~ msgid "Register me and apply for the posts!"
 #~ msgstr "Register me and apply for the posts!"

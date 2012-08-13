@@ -1,7 +1,8 @@
 from django.contrib import admin
-from recruitment.models import Application, DriverLicense, ForkLiftLicense, Language, Person, Position, ShirtSize, StringTranslation, TextTranslation, StudyArea
+from recruitment.models import Application, ApplicationComment, DriverLicense, ForkLiftLicense, Language, Person, Position, ShirtSize, StringTranslation, TextTranslation, StudyArea
 
 admin.site.register(Application)
+admin.site.register(ApplicationComment)
 admin.site.register(DriverLicense)
 admin.site.register(ForkLiftLicense)
 admin.site.register(Language)

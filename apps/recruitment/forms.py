@@ -4,13 +4,18 @@ from django import forms
 from django.forms.widgets import CheckboxSelectMultiple 
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
-from recruitment.models import Application, Person
+from recruitment.models import Application, ApplicationComment, Person
 import string
 
 class ApplicationForm(forms.ModelForm):
     class Meta:
         model = Application
         exclude = ('person', 'state')
+
+class ApplicationCommentForm(forms.ModelForm):
+    class Meta:
+        model = ApplicationComment
+        exclude = ('person', 'application')
 
 class PersonForm(forms.ModelForm):
     class Meta:

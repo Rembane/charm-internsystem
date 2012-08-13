@@ -13,7 +13,11 @@ urlpatterns = patterns('',
 
     # Backoffice
     url(r'^backoffice/$', TemplateView.as_view(template_name=u'recruitment/backoffice.html'), name='backoffice'),
-    url(r'^backoffice/list_applications$', 'recruitment.views.list_applications', name='list_applications'),
+    url(r'^backoffice/list_applications/$', 'recruitment.views.list_applications', name='list_applications'),
+    url(r'^backoffice/show_application/(?P<pk>\d+)/$', 'recruitment.views.show_application', name='show_application'),
+
+    # Comments
+    url(r'^comment/add/(?P<pk>\d+)/$', 'recruitment.views.add_application_comment', name='add_application_comment'),
 
     url(r'^set_language/(?P<code>[\w\-]+)$', 'recruitment.views.set_language', name='set_language')
 )

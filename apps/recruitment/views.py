@@ -10,7 +10,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext, loader
 from django.utils.translation import ugettext as _
-from recruitment.forms import ApplicationForm, PersonForm
+from recruitment.forms import ApplicationForm, ApplicationCommentForm, PersonForm
 from recruitment.models import Application, DriverLicense, ForkLiftLicense, Language, Person, ShirtSize, StudyArea
 import operator
 
@@ -102,6 +102,24 @@ def apply_for_position(request):
 def list_applications(request):
     return render(request, 'recruitment/list_applications.html', { 'page_title' : _(u'List applications'), 'applications' : Application.objects.all().order_by('-created').select_related()})
     
+@permission_required('can_administrate')
+def show_application(request, pk):
+    return render(request, 'recruitment/show_application.html', { 'page_title' : _(u'Show application'), 'application' : Application.objects.get(pk=pk), 'acform' : ApplicationCommentForm(), 'button_text' : _(u'Comment!') })
+
+@permission_required('can_administrate')
+def add_application_comment(request, pk):
+    u"""Saves a comment."""
+    if request.method == 'POST':
+        acform = ApplicationCommentForm(request.POST)
+        if acform.is_valid():
+            ac = acform.save(commit=False)
+            ac.application = Application.objects.get(pk=pk)
+            ac.person = Person.objects.get(user=request.user)
+            ac.save()
+
+    return HttpResponseRedirect(reverse('show_application', args=[pk]))
+
+
 def set_language(request, code):
     u"""Set the language session variable to code."""
     try:
@@ -110,4 +128,5 @@ def set_language(request, code):
         pass
    
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
 

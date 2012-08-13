@@ -210,3 +210,16 @@ class Application(models.Model):
     def drop_out(self):
         pass
 
+class ApplicationComment(models.Model):
+    text = models.TextField(ugettext_lazy(u'Comment'))
+    person = models.ForeignKey(Person, verbose_name=ugettext_lazy(u'Person'))
+    application = models.ForeignKey(Application, verbose_name=ugettext_lazy(u'Application'))
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = ugettext_lazy(u'application comment')
+        verbose_name_plural = ugettext_lazy(u'application comments')
+        ordering = ('created', )
+
+    def __unicode__(self):
+        return u'%s: %s' % (self.person, self.text)
