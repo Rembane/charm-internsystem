@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 11:20+0200\n"
-"PO-Revision-Date: 2012-08-13 11:23+0100\n"
+"POT-Creation-Date: 2012-08-17 21:40+0200\n"
+"PO-Revision-Date: 2012-08-17 21:44+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -21,233 +21,218 @@ msgstr ""
 msgid "Social security number must have a length of 10 or 12 digits."
 msgstr "Social security number must have a length of 10 or 12 digits."
 
-#: models.py:12
+#: models.py:15
 msgid "Language code"
 msgstr "Language code"
 
-#: models.py:13
+#: models.py:16
 msgid "Language name"
 msgstr "Language name"
 
-#: models.py:16
+#: models.py:19
 msgid "language"
 msgstr "language"
 
-#: models.py:17
+#: models.py:20
 msgid "languages"
 msgstr "languages"
 
-#: models.py:24
+#: models.py:27
 msgid "String"
 msgstr "String"
 
-#: models.py:26
-#: models.py:39
+#: models.py:29
+#: models.py:42
 msgid "Default language"
 msgstr "Default language"
 
-#: models.py:29
+#: models.py:32
 msgid "string translation"
 msgstr "string translation"
 
-#: models.py:30
+#: models.py:33
 msgid "string translations"
 msgstr "string translations"
 
-#: models.py:37
+#: models.py:40
 msgid "Text"
 msgstr "Text"
 
-#: models.py:42
+#: models.py:45
 msgid "text translation"
 msgstr "text translation"
 
-#: models.py:43
+#: models.py:46
 msgid "text translations"
 msgstr "text translations"
 
-#: models.py:74
-#: models.py:100
+#: models.py:77
+#: models.py:103
 msgid "area of study"
 msgstr "area of study"
 
-#: models.py:75
+#: models.py:78
 msgid "areas of study"
 msgstr "areas of study"
 
-#: models.py:79
-#: models.py:102
-#: templates/recruitment/confirmation.html:36
-#: templates/recruitment/mypage.html:48
+#: models.py:82
+#: models.py:105
+#: templates/recruitment/mypage.html:74
 #: templates/recruitment/register_confirmation_mail.txt:10
-#: templates/recruitment/show_application.html:50
 msgid "driver license"
 msgstr "driver license"
 
-#: models.py:80
+#: models.py:83
 msgid "driver licenses"
 msgstr "driver licenses"
 
-#: models.py:84
-#: models.py:103
-#: templates/recruitment/confirmation.html:40
-#: templates/recruitment/mypage.html:52
+#: models.py:87
+#: models.py:106
+#: templates/recruitment/mypage.html:78
 #: templates/recruitment/register_confirmation_mail.txt:11
-#: templates/recruitment/show_application.html:54
 msgid "forklift license"
 msgstr "forklift license"
 
-#: models.py:85
+#: models.py:88
 msgid "forklift licenses"
 msgstr "forklift licenses"
 
-#: models.py:89
-#: models.py:105
-#: templates/recruitment/confirmation.html:48
-#: templates/recruitment/mypage.html:60
+#: models.py:92
+#: models.py:108
+#: templates/recruitment/mypage.html:86
 #: templates/recruitment/register_confirmation_mail.txt:13
-#: templates/recruitment/show_application.html:62
 msgid "shirt size"
 msgstr "shirt size"
 
-#: models.py:90
+#: models.py:93
 msgid "shirt sizes"
 msgstr "shirt sizes"
 
-#: models.py:94
-#: templates/recruitment/confirmation.html:8
-#: templates/recruitment/mypage.html:20
+#: models.py:97
+#: templates/recruitment/mypage.html:46
 #: templates/recruitment/register_confirmation_mail.txt:3
 msgid "First name"
 msgstr "First name"
 
-#: models.py:95
-#: templates/recruitment/confirmation.html:12
-#: templates/recruitment/mypage.html:24
+#: models.py:98
+#: templates/recruitment/mypage.html:50
 #: templates/recruitment/register_confirmation_mail.txt:4
 msgid "Last name"
 msgstr "Last name"
 
-#: models.py:96
-#: templates/recruitment/confirmation.html:16
-#: templates/recruitment/mypage.html:28
+#: models.py:99
+#: templates/recruitment/mypage.html:54
 #: templates/recruitment/register_confirmation_mail.txt:5
-#: templates/recruitment/show_application.html:34
+#: templates/recruitment/show_application.html:42
 msgid "Social security number"
 msgstr "Social security number"
 
-#: models.py:96
+#: models.py:99
 msgid "Enter your social security number, using ten or twelve digits."
 msgstr "Enter your social security number, using ten or twelve digits."
 
-#: models.py:97
-#: templates/recruitment/confirmation.html:20
+#: models.py:100
 #: templates/recruitment/list_applications.html:9
-#: templates/recruitment/mypage.html:32
+#: templates/recruitment/mypage.html:58
 #: templates/recruitment/register_confirmation_mail.txt:6
-#: templates/recruitment/show_application.html:17
+#: templates/recruitment/show_application.html:19
 msgid "Phone number"
 msgstr "Phone number"
 
-#: models.py:98
-#: templates/recruitment/confirmation.html:24
-#: templates/recruitment/mypage.html:36
+#: models.py:101
+#: templates/recruitment/mypage.html:62
 #: templates/recruitment/register_confirmation_mail.txt:7
-#: templates/recruitment/show_application.html:38
+#: templates/recruitment/show_application.html:46
 msgid "E-mail"
 msgstr "E-mail"
 
-#: models.py:101
-#: templates/recruitment/confirmation.html:32
-#: templates/recruitment/mypage.html:44
+#: models.py:104
+#: templates/recruitment/mypage.html:70
 #: templates/recruitment/register_confirmation_mail.txt:9
-#: templates/recruitment/show_application.html:46
+#: templates/recruitment/show_application.html:54
 msgid "Starting year"
 msgstr "Starting year"
 
-#: models.py:103
+#: models.py:106
 msgid "<a href=\"http://www.youtube.com/watch?v=9z77oztO6UQ\">Safety first!</a>"
 msgstr "<a href=\"http://www.youtube.com/watch?v=9z77oztO6UQ\">Safety first!</a>"
 
-#: models.py:104
-#: templates/recruitment/confirmation.html:44
-#: templates/recruitment/mypage.html:56
+#: models.py:107
+#: templates/recruitment/mypage.html:82
 #: templates/recruitment/register_confirmation_mail.txt:12
-#: templates/recruitment/show_application.html:58
+#: templates/recruitment/show_application.html:66
 msgid "Allergies and food preferences"
 msgstr "Allergies and food preferences"
 
-#: models.py:110
+#: models.py:113
 msgid "Created"
 msgstr "Created"
 
-#: models.py:111
+#: models.py:114
 msgid "E-mail address confirmed"
 msgstr "E-mail address confirmed"
 
-#: models.py:114
+#: models.py:117
 msgid "person"
 msgstr "person"
 
-#: models.py:115
+#: models.py:118
 msgid "people"
 msgstr "people"
 
-#: models.py:119
+#: models.py:122
 msgid "Can administrate"
 msgstr "Can administrate"
 
-#: models.py:180
-#: templates/recruitment/list_applications.html:7
-#: templates/recruitment/mypage.html:85
-#: templates/recruitment/show_application.html:9
-msgid "State"
-msgstr "State"
-
-#: models.py:180
-#: models.py:197
-#: models.py:201
-#: models.py:205
-msgid "applied"
-msgstr "applied"
-
-#: models.py:182
+#: models.py:185
 msgid "Are you suitable?"
 msgstr "Are you suitable?"
 
-#: models.py:182
+#: models.py:185
 msgid "Motivate why you would do a good job at this post."
 msgstr "Motivate why you would do a good job at this post."
 
-#: models.py:183
+#: models.py:186
 msgid "Your first preferred position"
 msgstr "Your first preferred position"
 
-#: models.py:184
+#: models.py:187
 msgid "Your second preferred position"
 msgstr "Your second preferred position"
 
-#: models.py:185
+#: models.py:188
 msgid "Your third preferred position"
 msgstr "Your third preferred position"
 
-#: models.py:191
+#: models.py:189
+msgid "Approved position"
+msgstr "Approved position"
+
+#: models.py:195
 msgid "application"
 msgstr "application"
 
-#: models.py:192
+#: models.py:196
 msgid "applications"
 msgstr "applications"
 
-#: models.py:197
+#: models.py:204
+msgid "applied"
+msgstr "applied"
+
+#: models.py:205
 msgid "approved"
 msgstr "approved"
 
-#: models.py:201
+#: models.py:206
+msgid "approved_not_confirmed"
+msgstr "approved_not_confirmed"
+
+#: models.py:207
 msgid "not_approved"
 msgstr "not_approved"
 
-#: models.py:205
+#: models.py:208
 msgid "reserve"
 msgstr "reserve"
 
@@ -255,158 +240,209 @@ msgstr "reserve"
 msgid "dropped_out"
 msgstr "dropped_out"
 
-#: models.py:214
+#: models.py:231
+#, python-format
+msgid "[CHARM] You have been approved for %s!"
+msgstr "[CHARM] You have been approved for %s!"
+
+#: models.py:256
 msgid "Comment"
 msgstr "Comment"
 
-#: models.py:215
+#: models.py:257
 msgid "Person"
 msgstr "Person"
 
-#: models.py:216
+#: models.py:258
 msgid "Application"
 msgstr "Application"
 
-#: models.py:220
+#: models.py:262
 msgid "application comment"
 msgstr "application comment"
 
-#: models.py:221
+#: models.py:263
 msgid "application comments"
 msgstr "application comments"
 
-#: views.py:21
+#: views.py:22
 #, fuzzy
 msgid "Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
 msgstr "Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
 
-#: views.py:44
+#: views.py:45
 msgid "[CHARM] Thank you for registering!"
 msgstr "[CHARM] Thank you for registering!"
 
-#: views.py:52
+#: views.py:49
+msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."
+msgstr "Thank you for registering. You will receive an e-mail within 24 hours with more information."
+
+#: views.py:54
 msgid "Register!"
 msgstr "Register!"
 
-#: views.py:56
+#: views.py:58
 msgid "My page"
 msgstr "My page"
 
-#: views.py:84
+#: views.py:86
 #: templates/recruitment/mypage.html:6
 msgid "Edit my profile"
 msgstr "Edit my profile"
 
-#: views.py:84
-#: views.py:98
+#: views.py:86
+#: views.py:112
 msgid "Save!"
 msgstr "Save!"
 
+#: views.py:96
 #: views.py:98
+msgid "and"
+msgstr "and"
+
+#: views.py:108
+#, python-format
+msgid "Thank you for applying to %s. You will within 24 hours receieve a confirmation mail with further instructions."
+msgstr "Thank you for applying to %s. You will within 24 hours receieve a confirmation mail with further instructions."
+
+#: views.py:112
 #: templates/recruitment/mypage.html:9
 msgid "Apply for position"
 msgstr "Apply for position"
 
-#: views.py:103
+#: views.py:125
 #: templates/recruitment/backoffice.html:7
 msgid "List applications"
 msgstr "List applications"
 
-#: views.py:107
+#: views.py:134
 msgid "Show application"
 msgstr "Show application"
 
-#: views.py:107
+#: views.py:134
 msgid "Comment!"
 msgstr "Comment!"
+
+#: templates/recruitment/apply_confirmation_mail.txt:3
+msgid "You have been approved for "
+msgstr "You have been approved for "
+
+#: templates/recruitment/apply_confirmation_mail.txt:5
+msgid "To confirm the approval, please click on this link:"
+msgstr "To confirm the approval, please click on this link:"
+
+#: templates/recruitment/apply_confirmation_mail.txt:8
+#: templates/recruitment/register_confirmation_mail.txt:21
+msgid "Regards CHARM"
+msgstr "Regards CHARM"
 
 #: templates/recruitment/backoffice.html:5
 msgid "Backoffice functionality"
 msgstr "Backoffice functionality"
 
-#: templates/recruitment/confirmation.html:4
-msgid "Thank you for registering. You will receive an e-mail within 24 hours with more information."
-msgstr "Thank you for registering. You will receive an e-mail within 24 hours with more information."
-
-#: templates/recruitment/confirmation.html:28
-#: templates/recruitment/mypage.html:40
-#: templates/recruitment/register_confirmation_mail.txt:8
-#: templates/recruitment/show_application.html:42
-msgid "Area of study"
-msgstr "Area of study"
-
-#: templates/recruitment/confirmation.html:45
-#: templates/recruitment/mypage.html:57
-#: templates/recruitment/register_confirmation_mail.txt:12
-#: templates/recruitment/show_application.html:59
-msgid "None"
-msgstr "None"
-
-#: templates/recruitment/confirmation.html:57
-#: templates/recruitment/mypage.html:69
-#: templates/recruitment/register_confirmation_mail.txt:15
-msgid "Username"
-msgstr "Username"
-
-#: templates/recruitment/confirmation.html:61
-#: templates/recruitment/mypage.html:73
-#: templates/recruitment/register_confirmation_mail.txt:16
-msgid "Password"
-msgstr "Password"
-
-#: templates/recruitment/confirmation.html:62
-msgid "Is sent to your mail."
-msgstr "Is sent to your mail."
+#: templates/recruitment/list_applications.html:7
+#: templates/recruitment/mypage.html:31
+#: templates/recruitment/show_application.html:11
+msgid "State"
+msgstr "State"
 
 #: templates/recruitment/list_applications.html:8
-#: templates/recruitment/show_application.html:13
+#: templates/recruitment/show_application.html:15
 msgid "Name"
 msgstr "Name"
 
 #: templates/recruitment/mypage.html:7
-#: templates/recruitment/mypage.html:74
+#: templates/recruitment/mypage.html:100
 msgid "Change password"
 msgstr "Change password"
 
-#: templates/recruitment/mypage.html:12
-msgid "My profile"
-msgstr "My profile"
+#: templates/recruitment/mypage.html:13
+msgid "Messages"
+msgstr "Messages"
 
-#: templates/recruitment/mypage.html:15
+#: templates/recruitment/mypage.html:22
 msgid "Please confirm that your e-mail address is valid by clicking on the link in the confirmation mail."
 msgstr "Please confirm that your e-mail address is valid by clicking on the link in the confirmation mail."
 
-#: templates/recruitment/mypage.html:78
+#: templates/recruitment/mypage.html:26
 msgid "Applications"
 msgstr "Applications"
 
-#: templates/recruitment/mypage.html:84
+#: templates/recruitment/mypage.html:30
 msgid "Positions"
 msgstr "Positions"
+
+#: templates/recruitment/mypage.html:42
+msgid "My profile"
+msgstr "My profile"
+
+#: templates/recruitment/mypage.html:66
+#: templates/recruitment/register_confirmation_mail.txt:8
+#: templates/recruitment/show_application.html:50
+msgid "Area of study"
+msgstr "Area of study"
+
+#: templates/recruitment/mypage.html:83
+#: templates/recruitment/register_confirmation_mail.txt:12
+#: templates/recruitment/show_application.html:67
+msgid "None"
+msgstr "None"
+
+#: templates/recruitment/mypage.html:95
+#: templates/recruitment/register_confirmation_mail.txt:15
+msgid "Username"
+msgstr "Username"
+
+#: templates/recruitment/mypage.html:99
+#: templates/recruitment/register_confirmation_mail.txt:16
+msgid "Password"
+msgstr "Password"
 
 #: templates/recruitment/register_confirmation_mail.txt:18
 msgid "Confirm your email address by clicking on this link:"
 msgstr "Confirm your email address by clicking on this link:"
 
-#: templates/recruitment/register_confirmation_mail.txt:21
-msgid "Regards CHARM"
-msgstr "Regards CHARM"
-
 #: templates/recruitment/show_application.html:5
 msgid "Back"
 msgstr "Back"
 
-#: templates/recruitment/show_application.html:21
+#: templates/recruitment/show_application.html:23
 msgid "Preferred position 1"
 msgstr "Preferred position 1"
 
-#: templates/recruitment/show_application.html:25
+#: templates/recruitment/show_application.html:24
+#: templates/recruitment/show_application.html:28
+#: templates/recruitment/show_application.html:32
+msgid "Approve"
+msgstr "Approve"
+
+#: templates/recruitment/show_application.html:27
 msgid "Preferred position 2"
 msgstr "Preferred position 2"
 
-#: templates/recruitment/show_application.html:29
+#: templates/recruitment/show_application.html:31
 msgid "Preferred position 3"
 msgstr "Preferred position 3"
+
+#: templates/recruitment/show_application.html:35
+msgid "Suitability motivation"
+msgstr "Suitability motivation"
+
+#: templates/recruitment/show_application.html:58
+msgid "Driver license"
+msgstr "Driver license"
+
+#: templates/recruitment/show_application.html:62
+msgid "Forklift license"
+msgstr "Forklift license"
+
+#: templates/recruitment/show_application.html:70
+msgid "Shirt size"
+msgstr "Shirt size"
+
+#~ msgid "Is sent to your mail."
+#~ msgstr "Is sent to your mail."
 
 #~ msgid "Register me and apply for the posts!"
 #~ msgstr "Register me and apply for the posts!"
@@ -419,15 +455,6 @@ msgstr "Preferred position 3"
 
 #~ msgid "Reception"
 #~ msgstr "Reception"
-
-#~ msgid "Driver license"
-#~ msgstr "Driver license"
-
-#~ msgid "Forklift license"
-#~ msgstr "Forklift license"
-
-#~ msgid "Shirt size"
-#~ msgstr "Shirt size"
 
 #~ msgid "Yes"
 #~ msgstr "Yes"

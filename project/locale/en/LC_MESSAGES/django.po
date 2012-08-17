@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 11:20+0200\n"
+"POT-Creation-Date: 2012-08-17 21:40+0200\n"
 "PO-Revision-Date: 2012-06-23 15:59+0100\n"
 "Last-Translator: Andreas Ekeroot <andeke@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgstr "English"
 msgid "Swedish"
 msgstr "Swedish"
 
-#: templates/base.html:12
+#: templates/base.html:13
 msgid "Languages"
 msgstr "Languages"
 
-#: templates/base.html:20
+#: templates/base.html:21
 msgid "Menu"
 msgstr "Menu"
 
-#: templates/base.html:23
+#: templates/base.html:24
 msgid "Logged in as:"
 msgstr "Logged in as:"
 
-#: templates/base.html:24
+#: templates/base.html:25
 msgid "Log out"
 msgstr "Log out"
 
-#: templates/base.html:26
+#: templates/base.html:27
 msgid "Register"
 msgstr "Register"
 
-#: templates/base.html:27 templates/auth/login.html:23
+#: templates/base.html:28 templates/auth/login.html:23
 msgid "Login"
 msgstr "Login"
 
