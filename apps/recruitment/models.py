@@ -2,8 +2,11 @@
 
 from django_fsm.db.fields import FSMField, transition
 from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
+from django.core.mail import send_mail
 from django.db import models
 from django.db.models import Q
+from django.template import Context, loader
 from django.utils.translation import get_language, ugettext_lazy, ugettext as _
 import hashlib
 
@@ -174,15 +177,16 @@ class Position(models.Model):
 
     def __unicode__(self):
         return self.name
-    
+
 class Application(models.Model):
     person = models.ForeignKey(Person)
-    state = FSMField(ugettext_lazy(u'State'), default=ugettext_lazy(u'applied'), protected=True, editable=False)
+    state = FSMField(u'State', default=u'applied', protected=True, editable=False)
 
     suitability_motivation = models.CharField(ugettext_lazy(u'Are you suitable?'), help_text=ugettext_lazy(u'Motivate why you would do a good job at this post.'), max_length=255)
     preferred_position1 = models.ForeignKey(Position, verbose_name=ugettext_lazy(u'Your first preferred position'), related_name=u'application_set1')
     preferred_position2 = models.ForeignKey(Position, verbose_name=ugettext_lazy(u'Your second preferred position'), related_name=u'application_set2', blank=True, null=True) 
     preferred_position3 = models.ForeignKey(Position, verbose_name=ugettext_lazy(u'Your third preferred position'), related_name=u'application_set3', blank=True, null=True)
+    approved_position = models.ForeignKey(Position, verbose_name=ugettext_lazy(u'Approved position'), related_name=u'approved_application_set', blank=True, null=True)
     
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -191,24 +195,62 @@ class Application(models.Model):
         verbose_name = ugettext_lazy(u'application')
         verbose_name_plural = ugettext_lazy(u'applications')
 
-    def __unicode__(self):
-        return u'%s, %s' % (self.person, self.state)
+    @property
+    def translated_state(self):
+        # TODO: Put the translations dictionary somewhere else, where
+        # we only need to translate it a few times, like a constructor
+        # or something.
+        translations = {
+                u'applied' : _(u'applied'),
+                u'approved' : _(u'approved'),
+                u'approved_not_confirmed' : _(u'approved_not_confirmed'),
+                u'not_approved' : _(u'not_approved'),
+                u'reserve' : _(u'reserve'),
+                u'dropped_out' : _(u'dropped_out'),
+            }
 
-    @transition(source=ugettext_lazy(u'applied'), target=ugettext_lazy(u'approved'), save=True)
-    def approve(self):
+        return translations[self.state]
+
+    @property
+    def confirmation_hash(self):
+        return hashlib.sha1(unicode(self.person) + unicode(self.created)).hexdigest()
+
+    def __unicode__(self):
+        return u'%s, %s' % (self.person, self.translated_state)
+
+    @transition(source=u'applied', target=u'approved_not_confirmed', save=True)
+    def approve(self, position):
+        self.approved_position = position
+        
+        # Prepare an e-mail
+        current_site  = Site.objects.get_current()
+        mail_template = loader.get_template('recruitment/apply_confirmation_mail.txt')
+        mail_context  = Context({'position' : position, 'pk' : self.pk, 'confirmation_hash' : self.confirmation_hash, 'domain' : current_site.domain})
+
+        # Send the mail to the user
+        send_mail(_(u'[CHARM] You have been approved for %s!') % position, mail_template.render(mail_context), 'noreply@%s' % current_site.domain, [self.person.email], fail_silently=True)
+
+
+    @transition(source=u'approved_not_confirmed', target=u'approved', save=True)
+    def confirm(self):
         pass
 
-    @transition(source=ugettext_lazy(u'applied'), target=ugettext_lazy(u'not_approved'), save=True)
+    @transition(source=u'applied', target=u'not_approved', save=True)
     def not_approve(self):
         pass
 
-    @transition(source=ugettext_lazy(u'applied'), target=ugettext_lazy(u'reserve'), save=True)
+    @transition(source=u'applied', target=u'reserve', save=True)
     def put_in_reserve(self):
         pass
 
-    @transition(source=u'*', target=ugettext_lazy(u'dropped_out'), save=True)
+    @transition(source=u'*', target=u'dropped_out', save=True)
     def drop_out(self):
         pass
+
+    @transition(source=u'*', target=u'applied', save=True)
+    def reset(self):
+        self.approved_position = None
+
 
 class ApplicationComment(models.Model):
     text = models.TextField(ugettext_lazy(u'Comment'))

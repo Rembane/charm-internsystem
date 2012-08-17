@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     # Recruitment
     url(r'^$', 'recruitment.views.register', name=u'register'),
     url(r'^confirm_email_address/(?P<pk>\d+)/(?P<email_hash>\w+)/$', 'recruitment.views.confirm_email_address', name=u'confirm_email_address'),
+    url(r'^confirm_application/(?P<pk>\d+)/(?P<confirmation_hash>\w+)/$', 'recruitment.views.confirm_application', name=u'confirm_application'),
     url(r'^mypage/$', 'recruitment.views.mypage', name=u'mypage'),
     url(r'^edit_my_profile/$', 'recruitment.views.edit_my_profile', name=u'edit_my_profile'),
     url(r'^apply_for_position/$', 'recruitment.views.apply_for_position', name=u'apply_for_position'),

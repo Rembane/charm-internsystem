@@ -10,7 +10,7 @@
     </tr>
     {% for application in applications %}
     <tr>
-        <td>{{application.state|capfirst}}</td>
+        <td class="{{application.state}}">{{application.state|capfirst}}</td>
         <td><a href="{% url show_application application.pk %}">{{application.person.fname}} {{application.person.lname}}</a></td>
         <td>{{application.person.phone}}</td>
     </tr>

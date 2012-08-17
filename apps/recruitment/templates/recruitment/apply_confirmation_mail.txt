@@ -1,0 +1,10 @@
+{% load i18n %}
+
+{% trans "You have been approved for " %} {{position}}.
+
+{% trans "To confirm the approval, please click on this link:" %} http://{{domain}}{% url confirm_application pk confirmation_hash %}
+
+
+{% trans "Regards CHARM" %}
+
+

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User
@@ -45,6 +46,7 @@ def register(request):
 
             loggedin_user = authenticate(username=person.email, password=password)
             if loggedin_user is not None:
+                messages.success(request, _(u'Thank you for registering. You will receive an e-mail within 24 hours with more information.'))
                 login(request, loggedin_user)
 
             return HttpResponseRedirect(reverse('mypage'))
@@ -85,6 +87,16 @@ def edit_my_profile(request):
 
 @login_required
 def apply_for_position(request):
+    def join_preferred_positions(pfs):
+        pfs = [p for p in pfs if p]
+        pfslen = len(pfs)
+        if pfslen == 1:
+            return pfs[0]
+        elif pfslen == 2:
+            return _(u'and').join(unicode(pfs))
+        else:
+            return u'%s, %s %s %s' % (pfs[0], _(u'and'), pfs[1], pfs[2])
+
     # TODO: Make the process more user friendly.
     aform = ApplicationForm(request.POST or None)
     if request.method == 'POST':
@@ -93,10 +105,20 @@ def apply_for_position(request):
             application.person = Person.objects.get(user=request.user)
             application.save()
 
+            messages.success(request, _(u'Thank you for applying to %s. You will within 24 hours receieve a confirmation mail with further instructions.') % join_preferred_positions((application.preferred_position1, application.preferred_position2, application.preferred_position3)))
+
             return HttpResponseRedirect(reverse('mypage') + u'#applications')
 
     return render(request, 'recruitment/register.html', { 'page_title' : _(u'Apply for position'), 'button_text' : _(u'Save!'), 'form' : aform })
 
+def confirm_application(request, pk, confirmation_hash):
+    u"""Confirms the email adress if pk and email_hash are correct."""
+    # TODO: UX-stuff, like giving the user a message about what happened and how.
+    application = Application.objects.get(pk=pk)
+    if confirmation_hash == application.confirmation_hash:
+        application.confirm()
+
+    return HttpResponseRedirect(reverse('mypage'))
 
 @permission_required('can_administrate')
 def list_applications(request):
@@ -104,7 +126,12 @@ def list_applications(request):
     
 @permission_required('can_administrate')
 def show_application(request, pk):
-    return render(request, 'recruitment/show_application.html', { 'page_title' : _(u'Show application'), 'application' : Application.objects.get(pk=pk), 'acform' : ApplicationCommentForm(), 'button_text' : _(u'Comment!') })
+    application = Application.objects.get(pk=pk)
+    if request.method == 'POST':
+        mapping = {'pp1' : 'preferred_position1', 'pp2' : 'preferred_position2', 'pp3' : 'preferred_position3'}
+        application.approve(getattr(application, filter(operator.truth, [mapping.get(k, None) for (k,v) in request.POST.iteritems()])[0]))
+
+    return render(request, 'recruitment/show_application.html', { 'page_title' : _(u'Show application'), 'application' : application, 'acform' : ApplicationCommentForm(), 'button_text' : _(u'Comment!') })
 
 @permission_required('can_administrate')
 def add_application_comment(request, pk):

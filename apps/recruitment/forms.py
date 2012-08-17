@@ -10,7 +10,7 @@ import string
 class ApplicationForm(forms.ModelForm):
     class Meta:
         model = Application
-        exclude = ('person', 'state')
+        exclude = ('person', 'state', 'approved_position')
 
 class ApplicationCommentForm(forms.ModelForm):
     class Meta:

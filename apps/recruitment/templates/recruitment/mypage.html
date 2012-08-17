@@ -9,11 +9,37 @@
     <li><a href="{% url apply_for_position %}">{% trans "Apply for position" %}</a></li>
 </ul>
 
-<h2>{% trans "My profile" %}</h2>
+{% if messages %}
+<h2>{% trans "Messages" %}</h2>
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
 {% if not person.email_confirmed %}
 <p>{% trans "Please confirm that your e-mail address is valid by clicking on the link in the confirmation mail." %}</p>
 {% endif %}
+
+{% if person.application_set.all %}
+<h2>{% trans "Applications" %}</h2>
+
+<table>
+    <tr>
+        <th>{% trans "Positions" %}</th>
+        <th>{% trans "State" %}</th>
+    </tr>
+{% for application in person.application_set.all %}
+    <tr class="{{application.state}}">
+        <td>{{ application.preferred_position1 }}{% if application.preferred_position2 %}, {{ application.preferred_position2 }}{% endif %}{% if application.preferred_position3 %}, {{ application.preferred_position3 }}{% endif %}</td>
+        <td>{{ application.translated_state|capfirst }}{% if application.approved_position %}: {{application.approved_position}}{% endif %}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endif %}
+
+<h2>{% trans "My profile" %}</h2>
 
 <table>
     <tr>
@@ -73,23 +99,6 @@
         <th>{% trans "Password" %}</th>
         <td><a href="{% url password_change %}">{% trans "Change password" %}</a></td>
     </tr>
-</table>
-
-<h2>{% trans "Applications" %}</h2>
-
-<a name="applications"></a>
-
-<table>
-    <tr>
-        <th>{% trans "Positions" %}</th>
-        <th>{% trans "State" %}</th>
-    </tr>
-{% for application in person.application_set.all %}
-    <tr>
-        <td>{{ application.preferred_position1 }}{% if application.preferred_position2 %}, {{ application.preferred_position2 }}{% endif %}{% if application.preferred_position3 %}, {{ application.preferred_position3 }}{% endif %}</td>
-        <td>{{ application.state }}</td>
-    </tr>
-{% endfor %}
 </table>
 
 {% endblock design %}
